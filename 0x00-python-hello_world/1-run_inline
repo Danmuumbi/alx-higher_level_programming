@@ -2,7 +2,7 @@
 
 # Check if PYCODE environment variable is set
 if [ -z "$PYCODE" ]; then
-    echo "Error: PYCODE environment variable not set."
+	echo "Error: PYCODE environment variable not set."
     exit 1
 fi
 
