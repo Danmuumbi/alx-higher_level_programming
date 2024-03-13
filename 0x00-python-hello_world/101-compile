@@ -1,0 +1,25 @@
+#!/usr/bin/python3
+import sys
+import py_compile
+import os
+
+if __name__ == "__main__":
+    # Get the Python file name from the environment variable
+    pyfile = os.getenv('PYFILE')
+
+    if not pyfile:
+        sys.stderr.write("Missing or empty PYFILE environment variable\n")
+        sys.exit(1)
+
+    # Output filename: $PYFILEc
+    pycfile = pyfile + 'c'
+
+    # Compile the Python script
+    try:
+        py_compile.compile(pyfile, cfile=pycfile)
+        sys.stderr.write(f"Compiling {pyfile} ...\n")
+        sys.exit(0)
+    except Exception as e:
+        sys.stderr.write(f"Error: {e}\n")
+        sys.exit(1)
+
