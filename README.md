@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Python - Object-relational mapping
 
 In this project, I learned about how object-relational mapping is used for
@@ -165,3 +166,6 @@ for all files. Provided by ALX.
   <mysql password> <database name>`.
   * Uses the `state` relationship to access the `State` objects linked to `City` objects.
   * Results are sorted by ascending `cities.id`.
+=======
+0x0E. SQL - More queries
+>>>>>>> 5da5a4490cb5f02b645d79c94e8cf17ccd1ab51d
