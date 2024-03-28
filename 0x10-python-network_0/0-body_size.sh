@@ -1,4 +1,5 @@
 #!/bin/bash
+# This script takes a URL as an argument, sends a request to that URL using curl in silent mode, and displays the size of the body of the response in bytes.
 
 # Check if the user provided a URL
 if [ -z "$1" ]; then
@@ -6,14 +7,6 @@ if [ -z "$1" ]; then
 	        exit 1
 fi
 
-# Send a GET request to the URL using curl and get the size of the response body
-response_size=$(curl -sI "$1" | grep -i content-length | awk '{print $2}')
-
-# Check if response_size is empty
-if [ -z "$response_size" ]; then
-	    echo "Unable to retrieve response size"
-	        exit 1
-fi
-
-echo "$response_size"
+# Send a GET request to the URL using curl in silent mode and get the size of the response body
+curl -sI "$1" | grep -i Content-Length | awk '{print $2}' | tr -d '\r\n'
 
