@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve | EvolTechs Software Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9fafb;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Industries Hero */
+        .industries-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .industries-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .industries-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .industries-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .industries-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .industries-breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .industries-breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .industries-breadcrumb a:hover {
+            opacity: 0.8;
+        }
+        
+        .industries-breadcrumb i {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        
+        /* Industries Intro */
+        .industries-intro {
+            padding: var(--section-padding);
+            text-align: center;
+            background-color: white;
+        }
+        
+        .industries-intro h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .industries-intro p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+        
+        /* Industries Grid */
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 20px 60px;
+        }
+        
+        .industry-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .industry-header {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .industry-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .industry-card:hover .industry-header img {
+            transform: scale(1.05);
+        }
+        
+        .industry-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px;
+            color: white;
+        }
+        
+        .industry-overlay h3 {
+            font-size: 1.6rem;
+            margin-bottom: 5px;
+        }
+        
+        .industry-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: rgba(255,255,255,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .industry-content {
+            padding: 25px;
+        }
+        
+        .industry-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+        
+        .industry-features {
+            margin-bottom: 20px;
+        }
+        
+        .industry-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .industry-feature i {
+            color: var(--secondary);
+            margin-top: 3px;
+            flex-shrink: 0;
+        }
+        
+        .industry-cta {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .industry-cta:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        /* Industries CTA */
+        .industries-cta {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .industries-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .industries-cta p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            background-color: white;
+            color: var(--primary);
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .industries-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .industries-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 992px) {
+            :root {
+                --section-padding: 60px 0;
+            }
+            
+            .industries-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .industries-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .industries-intro h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .industries-hero {
+                padding: 90px 0 40px;
+            }
+            
+            .industries-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .industries-hero p {
+                font-size: 1rem;
+            }
+            
+            .industries-grid {
+                grid-template-columns: 1fr;
+                padding: 0 10px 40px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            :root {
+                --section-padding: 50px 0;
+            }
+            
+            .industries-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .industries-intro h2 {
+                font-size: 1.6rem;
+            }
+            
+            .industry-overlay h3 {
+                font-size: 1.4rem;
+            }
+            
+            .industry-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+    <!-- Industries Hero -->
+    <section class="industries-hero">
+        <div class="container">
+            <div class="industries-hero-content">
+                <div class="industries-breadcrumb">
+                    <a href="../index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Industries</span>
+                </div>
+                <h1>Industries We Serve</h1>
+                <p>Tailored software solutions for your industry's unique challenges and opportunities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Intro -->
+    <section class="industries-intro">
+        <div class="container">
+            <h2>Industry-Specific Expertise</h2>
+            <p>With deep domain knowledge across multiple sectors, we deliver technology solutions that address your specific regulatory, operational, and competitive challenges while driving digital transformation.</p>
+        </div>
+    </section>
+
+    <!-- Industries Grid -->
+    <div class="container">
+        <div class="industries-grid">
+            <!-- Industry 1 -->
+            <div class="industry-card">
+                <div class="industry-header">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1511&q=80" alt="Financial Services">
+                    <div class="industry-overlay">
+                        <h3>Financial Services</h3>
+                    </div>
+                    <div class="industry-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                </div>
+                <div class="industry-content">
+                    <p>Secure, compliant solutions for banking, insurance, and fintech that enhance customer experiences while meeting strict regulatory requirements.</p>
+                    
+                    <div class="industry-features">
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Core banking modernization</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fraud detection systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Blockchain applications</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>RegTech compliance solutions</span>
+                        </div>
+                    </div>
+                    
+                    <a href="Financial-Services.html" class="industry-cta">Explore Solutions</a>
+                </div>
+            </div>
+            
+            <!-- Industry 2 -->
+            <div class="industry-card">
+                <div class="industry-header">
+                    <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Healthcare">
+                    <div class="industry-overlay">
+                        <h3>Healthcare</h3>
+                    </div>
+                    <div class="industry-icon">
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                </div>
+                <div class="industry-content">
+                    <p>HIPAA-compliant software that improves patient outcomes, streamlines operations, and enables interoperability across healthcare systems.</p>
+                    
+                    <div class="industry-features">
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>EHR/EMR systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Telemedicine platforms</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Medical imaging analytics</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Patient engagement portals</span>
+                        </div>
+                    </div>
+                    
+                    <a href="health-care.html" class="industry-cta">Explore Solutions</a>
+                </div>
+            </div>
+            
+            <!-- Industry 3 -->
+            <div class="industry-card">
+                <div class="industry-header">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Retail & E-commerce">
+                    <div class="industry-overlay">
+                        <h3>Retail & E-commerce</h3>
+                    </div>
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                </div>
+                <div class="industry-content">
+                    <p>Omnichannel solutions that unify physical and digital commerce, personalize customer experiences, and optimize supply chain operations.</p>
+                    
+                    <div class="industry-features">
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Headless commerce platforms</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>AI-powered recommendations</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Inventory management systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>AR/VR shopping experiences</span>
+                        </div>
+                    </div>
+                    
+                    <a href="Retail & E-commerce.html" class="industry-cta">Explore Solutions</a>
+                </div>
+            </div>
+            
+            <!-- Industry 4 -->
+            <div class="industry-card">
+                <div class="industry-header">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Education">
+                    <div class="industry-overlay">
+                        <h3>Education</h3>
+                    </div>
+                    <div class="industry-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                </div>
+                <div class="industry-content">
+                    <p>EdTech solutions that enhance learning experiences, streamline administration, and enable data-driven decision making for institutions.</p>
+                    
+                    <div class="industry-features">
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Learning management systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Student information systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Adaptive learning platforms</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Virtual classroom solutions</span>
+                        </div>
+                    </div>
+                    
+                    <a href="Education.html" class="industry-cta">Explore Solutions</a>
+                </div>
+            </div>
+            
+            <!-- Industry 5 -->
+            <div class="industry-card">
+                <div class="industry-header">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Manufacturing">
+                    <div class="industry-overlay">
+                        <h3>Manufacturing</h3>
+                    </div>
+                    <div class="industry-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                </div>
+                <div class="industry-content">
+                    <p>Industry 4.0 solutions that drive operational efficiency, predictive maintenance, and supply chain visibility for manufacturers.</p>
+                    
+                    <div class="industry-features">
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>IoT-enabled smart factories</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Quality control systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Digital twin technology</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Production scheduling optimization</span>
+                        </div>
+                    </div>
+                    
+                    <a href="Manufacturing.html" class="industry-cta">Explore Solutions</a>
+                </div>
+            </div>
+            
+            <!-- Industry 6 -->
+            <div class="industry-card">
+                <div class="industry-header">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" alt="Logistics">
+                    <div class="industry-overlay">
+                        <h3>Logistics & Transportation</h3>
+                    </div>
+                    <div class="industry-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                </div>
+                <div class="industry-content">
+                    <p>End-to-end logistics software that optimizes routes, improves fleet management, and enhances supply chain visibility.</p>
+                    
+                    <div class="industry-features">
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Route optimization algorithms</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real-time tracking systems</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Warehouse management</span>
+                        </div>
+                        <div class="industry-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Autonomous vehicle integration</span>
+                        </div>
+                    </div>
+                    
+                    <a href="Logistics & Transportation and Manufacturing.html" class="industry-cta">Explore Solutions</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Industries CTA -->
+    <section class="industries-cta">
+        <div class="container">
+            <h2>Don't See Your Industry Listed?</h2>
+            <p>Our adaptable solutions can be customized for virtually any sector. Contact us to discuss how we can address your specific industry challenges.</p>
+            <a href="../EvolTechs-contact-us/contact-us.html" class="cta-btn">Get a Custom Solution</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Industry card animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const animateOnScroll = function() {
+                const elements = document.querySelectorAll('.industry-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementPosition < windowHeight - 100) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            };
+            
+            // Initialize elements with starting state
+            const industryCards = document.querySelectorAll('.industry-card');
+            industryCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            
+            window.addEventListener('scroll', animateOnScroll);
+            animateOnScroll(); // Run once on load
+        });
+    </script>
+
+
+<div id="footer-container"></div>
+<script>
+    fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching the footer:', error));
+</script>
+</body>
+</html>

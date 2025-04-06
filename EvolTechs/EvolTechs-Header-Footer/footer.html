@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Template</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --footer-bg: #0f172a;
+            --footer-text: #94a3b8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--footer-bg);
+            color: var(--footer-text);
+            padding: 60px 0 0;
+            position: relative;
+        }
+        
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+        }
+        
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo-img {
+            height: 40px;
+            width: auto;
+            border-radius: 50%!important;
+        }
+        
+        .footer-logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .footer-logo-highlight {
+            color: var(--secondary);
+        }
+        
+        .footer-description {
+            line-height: 1.6;
+            font-size: 14px;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            color: var(--footer-text);
+        }
+        
+        .social-icon:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer-heading {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-heading::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .footer-links a i {
+            font-size: 12px;
+            color: var(--secondary);
+        }
+        
+        .footer-contact-info {
+            list-style: none;
+        }
+        
+        .footer-contact-info li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .footer-contact-info i {
+            color: var(--secondary);
+            font-size: 16px;
+            margin-top: 3px;
+        }
+        
+        .footer-contact-text {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        
+        .footer-contact-text a {
+            color: var(--footer-text);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-contact-text a:hover {
+            color: white;
+        }
+        
+        .footer-newsletter {
+            margin-top: 10px;
+        }
+        
+        .newsletter-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 4px;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 14px;
+        }
+        
+        .newsletter-input::placeholder {
+            color: var(--footer-text);
+        }
+        
+        /* .newsletter-btn {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border: none;
+            border-radius: 4px;
+            padding: 0 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .newsletter-btn:hover {
+            background-color: #e69008;
+        } */
+
+
+        .newsletter-form {
+    display: flex;
+    flex-direction: column; /* Stacks children vertically */
+    gap: 10px; /* Adds spacing between input & button */
+    max-width: 300px; /* Optional: Prevents stretching */
+}
+
+.newsletter-input {
+    width: 100%; /* Ensures input takes full width */
+    padding: 10px; /* Improves input field appearance */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.newsletter-btn {
+    /* background-color: var(--secondary); */
+    background-color: #e69008;
+    color: var(--dark);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px; /* Increased padding for better clickability */
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%; /* Makes button full width */
+}
+
+.newsletter-btn:hover {
+    background-color: #e69008;
+}
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+        }
+        
+        .footer-bottom-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            text-align: center;
+        }
+        
+        .footer-copyright {
+            font-size: 14px;
+        }
+        
+        .footer-legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .footer-legal-links a {
+            color: var(--footer-text);
+            text-decoration: none;
+            font-size: 13px;
+            transition: all 0.3s;
+        }
+        
+        .footer-legal-links a:hover {
+            color: white;
+        }
+        
+        .back-to-top {
+            position: absolute;
+            right: 30px;
+            top: -20px;
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .back-to-top {
+                right: 20px;
+                top: -15px;
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            footer {
+                padding-top: 50px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .footer-heading {
+                margin-bottom: 15px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .newsletter-btn {
+                padding: 12px 15px;
+            }
+            
+            .back-to-top {
+                right: 15px;
+                top: -12px;
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Company Info Column -->
+                <div class="footer-logo">
+                    <div class="footer-logo-container">
+                        <img src="../logo.png" alt="EvolTechs Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">Evol<span class="footer-logo-highlight">Techs</span></span>
+                    </div>
+                    <p class="footer-description">
+                        We deliver cutting-edge software solutions that drive business growth and digital transformation.
+                        Our team of experts is dedicated to building innovative products tailored to your needs.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon" aria-label="Dribbble"><i class="fab fa-dribbble"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links Column -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="../index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="../EvolTechs-About-Us/EvolTechs-aboutus.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="../EvolTechs-services/services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="../EvolTechs-Portfollio/index.html"><i class="fas fa-chevron-right"></i> Portfolio</a></li>
+                        <li><a href="../EvolTechs-Blog/blog.html"><i class="fas fa-chevron-right"></i> Blog</a></li>
+                        <li><a href="../EvolTechs-contact-us/contact-us.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                        <li><a href="../EvolTechs-Making-Future/index.html"><i class="fas fa-chevron-right"></i> Building Future</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services Column -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Our Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="../EvolTechs-services/Custom-Software-Development.html"><i class="fas fa-chevron-right"></i> Custom Software</a></li>
+                        <li><a href="../EvolTechs-services/Mobile-App-Development.html"><i class="fas fa-chevron-right"></i> Mobile Applications</a></li>
+                        <li><a href="../EvolTechs-services/Cloud-Solutions.html"><i class="fas fa-chevron-right"></i> Cloud Solutions</a></li>
+                        <li><a href="../EvolTechs-services/AI-&-Machine-Learning.html"><i class="fas fa-chevron-right"></i> AI & ML Services</a></li>
+                        <li><a href="../EvolTechs-services/Cybersecurity.html"><i class="fas fa-chevron-right"></i> Cybersecurity</a></li>
+                        <li><a href="../EvolTechs-services/Data-Analytics.html"><i class="fas fa-chevron-right"></i> Data Analytics</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info Column -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contact Us</h3>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span class="footer-contact-text">
+                                123 Tech Park, Silicon Valley<br>
+                                San Francisco, CA 94107
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span class="footer-contact-text">
+                                <!-- <a href="tel:+18005551234">+1 (800) 555-1234</a><br>
+                                <a href="tel:+18005556789">+1 (800) 555-6789</a> -->
+
+                                <a href="tel:+254 797 192917">+1 (800) 555-1234 <img src="https://upload.wikimedia.org/wikipedia/en/a/a4/Flag_of_the_United_States.svg" alt="US Flag" style="width: 1em; vertical-align: middle;"></a><br>
+<a href="tel:+254 797 192917">+254 797 192917 <img src="https://node01.flagstat.net/media/catalog/product/detail/1518.png" alt="African Union Flag" style="width: 1em; vertical-align: middle;"></a>
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span class="footer-contact-text">
+                                <a href="mailto:info@evoltechs.top">info@evoltechs.top</a><br>
+                                <a href="mailto:support@evoltechs.top">support@evoltechs.top</a>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter Column -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Newsletter</h3>
+                    <p class="newsletter-text">
+                        Subscribe to our newsletter to receive updates on our latest services, tech insights, and company news.
+                    </p>
+                    <!-- <form class="newsletter-form">
+                        <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                        
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form> -->
+
+
+
+                    <form class="newsletter-form" id="mc-embedded-subscribe-form" method="post" action="https://top.us7.list-manage.com/subscribe/post?u=07f59f546b78924eb8709605f&amp;id=0eb498d4c5&amp;f_id=000cfde3f0">
+                        <input type="email" name="EMAIL" class="newsletter-input" placeholder="Your email address" required>
+                        <input type="text" name="FNAME" class="newsletter-input" placeholder="First Name" style="display:none;"> <!-- Optional field -->
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display: none;"></div>
+                            <div class="response" id="mce-success-response" style="display: none;"></div>
+                        </div>
+                        <button type="submit" class="newsletter-btn">Subscribe</button>
+                    </form>
+                    
+                    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+                    <script type="text/javascript">
+                        (function($) {
+                            window.fnames = new Array();
+                            window.ftypes = new Array();
+                            fnames[0]='EMAIL'; ftypes[0]='email';
+                            fnames[1]='FNAME'; ftypes[1]='text';
+                        }(jQuery));
+                        var $mcj = jQuery.noConflict(true);
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="footer-copyright">
+                    &copy; 2023 EvolTechs. All Rights Reserved.
+                </div>
+                <div class="footer-legal-links">
+                    <a href="../EvolTechs-privacy/privacy.html">Privacy Policy</a>
+                    <a href="../EvolTechs-privacy/Terms-of-Service.html">Terms of Service</a>
+                    <a href="../Cookies-Policy.html">Cookies Policy</a>
+                    <a href="../Sitemap.html">Sitemap</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+    </footer>
+
+    <script>
+        // Back to top button functionality
+        const backToTopBtn = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                backToTopBtn.style.opacity = '1';
+                backToTopBtn.style.visibility = 'visible';
+            } else {
+                backToTopBtn.style.opacity = '0';
+                backToTopBtn.style.visibility = 'hidden';
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const emailInput = this.querySelector('.newsletter-input');
+                const email = emailInput.value;
+                
+                // Here you would typically send the email to your server
+                console.log('Subscribed email:', email);
+                
+                // Show success message
+                alert('Thank you for subscribing to our newsletter!');
+                emailInput.value = '';
+            });
+        }
+    </script>
+</body>
+</html>

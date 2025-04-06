@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Connectivity Network | [Your Company Name]</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #0066cc;
+            --primary-light: #4d94ff;
+            --primary-dark: #003d66;
+            --secondary: #00cc88;
+            --secondary-light: #5cffc3;
+            --secondary-dark: #008055;
+            --dark: #1a1a1a;
+            --light: #f5f9ff;
+            --accent: #ff6b6b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: #ffffff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 30px;
+        }
+        
+        /* Hero Section */
+        .connectivity-hero {
+            background: linear-gradient(rgba(0, 102, 204, 0.9), rgba(0, 102, 204, 0.9)), 
+                        url('https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 180px 0 120px;
+            text-align: center;
+        }
+        
+        .connectivity-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .connectivity-hero p {
+            font-size: 1.25rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            border: 2px solid var(--secondary);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        /* Section Styles */
+        .section {
+            padding: 90px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--secondary);
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+            font-size: 1.1rem;
+        }
+        
+        /* Solution Overview */
+        .solution-overview {
+            background-color: var(--light);
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .overview-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .overview-text p {
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .tech-pill {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .overview-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        /* Technology Components */
+        .tech-components {
+            background-color: white;
+        }
+        
+        .components-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .component-card {
+            background: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .component-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .component-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .component-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Deployment Map */
+        .deployment-map {
+            background-color: var(--light);
+        }
+        
+        .map-container {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+        }
+        
+        .map-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 25px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        /* Case Studies */
+        .case-studies {
+            background-color: white;
+        }
+        
+        .case-study {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+        
+        .case-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .case-content h3 {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .case-results {
+            margin-top: 25px;
+        }
+        
+        .result-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .result-icon {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--secondary-dark);
+        }
+        
+        /* CTA Section */
+        .connectivity-cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .connectivity-cta h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+        
+        .connectivity-cta p {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .connectivity-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .overview-grid, .case-study {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .case-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .connectivity-hero {
+                padding: 120px 0 80px;
+            }
+            
+            .connectivity-hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .btn {
+                display: block;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+    <!-- Hero Section -->
+    <section class="connectivity-hero">
+        <div class="container">
+            <h1>Global Connectivity Network</h1>
+            <p>Bridging the digital divide with innovative satellite, 5G mesh, and solar-powered solutions to connect the unconnected billions.</p>
+            <a href="partner-with-us.html" class="btn btn-primary">Partner With Us</a>
+            <a href="#technology" class="btn btn-outline">Explore Technology</a>
+        </div>
+    </section>
+
+    <!-- Solution Overview -->
+    <section class="section solution-overview" id="overview">
+        <div class="container">
+            <div class="section-title">
+                <h2>Universal Internet Access</h2>
+                <p>Our hybrid network combines cutting-edge technologies to deliver affordable, high-speed connectivity to remote and underserved regions worldwide.</p>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-text">
+                    <h3>Redefining Global Connectivity</h3>
+                    <p>The Global Connectivity Network is a multi-technology platform designed to overcome geographical and economic barriers to internet access. Unlike traditional infrastructure, our solution dynamically combines satellite, terrestrial, and community mesh networks to provide reliable connectivity.</p>
+                    <p>With our proprietary routing algorithms and solar-powered nodes, we've reduced deployment costs by 73% compared to conventional internet infrastructure while maintaining 95% uptime in field tests.</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <span class="tech-pill">Low-Orbit Satellites</span>
+                        <span class="tech-pill">5G Mesh Networks</span>
+                        <span class="tech-pill">Solar-Powered Nodes</span>
+                        <span class="tech-pill">Dynamic Routing AI</span>
+                    </div>
+                </div>
+                <div class="overview-image">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Global Network Infrastructure">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Components -->
+    <section class="section tech-components" id="technology">
+        <div class="container">
+            <div class="section-title">
+                <h2>Core Technology Components</h2>
+                <p>Innovative engineering solutions working in harmony to deliver global coverage</p>
+            </div>
+            
+            <div class="components-grid">
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3>Nano-Satellite Constellation</h3>
+                    <p>Our low-earth orbit satellites provide backbone connectivity with 25ms latency, covering regions without existing infrastructure.</p>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Adaptive Mesh Network</h3>
+                    <p>Self-organizing 5G nodes extend coverage through communities, automatically routing around outages.</p>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <h3>Solar-Powered Nodes</h3>
+                    <p>Weather-resistant stations with 72-hour battery backup, operable entirely off-grid.</p>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Dynamic Routing AI</h3>
+                    <p>Machine learning optimizes traffic across multiple connection types in real-time.</p>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Zero-Trust Security</h3>
+                    <p>End-to-end encryption and decentralized authentication protect all network traffic.</p>
+                </div>
+                
+                <div class="component-card">
+                    <div class="component-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Usage Analytics</h3>
+                    <p>Real-time monitoring and predictive capacity planning for optimal performance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Map -->
+    <section class="section deployment-map">
+        <div class="container">
+            <div class="section-title">
+                <h2>Global Deployment Footprint</h2>
+                <p>Currently connecting communities across three continents with plans for global coverage</p>
+            </div>
+            
+            <div class="map-container">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Global Network Deployment Map" style="width:100%; border-radius:4px;">
+            </div>
+            
+            <div class="map-stats">
+                <div class="stat-card">
+                    <div class="stat-number">18</div>
+                    <p>Countries Served</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">3.2M</div>
+                    <p>Users Connected</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">97.3%</div>
+                    <p>Uptime Average</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">1.7s</div>
+                    <p>Avg Latency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies -->
+    <section class="section case-studies">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proven Impact</h2>
+                <p>Transforming communities through connectivity</p>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1520333789090-1afc82db536a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Rural Connectivity Case Study">
+                </div>
+                <div class="case-content">
+                    <h3>Rural Africa Connectivity Initiative</h3>
+                    <p>Deployed across 42 villages in sub-Saharan Africa, our network enabled telemedicine consultations, remote education, and mobile banking for communities previously without reliable internet access.</p>
+                    
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <strong>83% reduction</strong> in connectivity costs compared to cellular
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <div>
+                                <strong>12,000+ students</strong> gained access to online education
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div>
+                                <strong>3.4x increase</strong> in local business revenue
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="case-study">
+                <div class="case-content">
+                    <h3>Island Nation Deployment</h3>
+                    <p>Our satellite-mesh hybrid solution connected 17 remote islands, overcoming geographical challenges that made traditional infrastructure impractical.</p>
+                    
+                    <div class="case-results">
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div>
+                                <strong>95% coverage</strong> achieved in 8 months
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div>
+                                <strong>50Mbps average</strong> speeds during tests
+                            </div>
+                        </div>
+                        <div class="result-item">
+                            <div class="result-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <div>
+                                <strong>60% cheaper</strong> than submarine cable proposals
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="case-image">
+                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80" alt="Island Connectivity Case Study">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="connectivity-cta" id="contact">
+        <div class="container">
+            <h2>Join the Connectivity Revolution</h2>
+            <p>We're partnering with governments, NGOs, and local organizations to bridge the digital divide. Let's connect your community.</p>
+            <a href="../demo/index.html" class="btn btn-primary">Request Demo</a>
+            <a href="#" class="btn btn-outline">Technology White Paper</a>
+        </div>
+    </section>
+
+
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching the footer:', error));
+    </script>
+</body>
+</html>

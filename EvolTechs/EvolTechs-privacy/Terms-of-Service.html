@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service | EvolTechs Software Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+            --section-padding: 80px 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #f9fafb;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Terms Hero */
+        .terms-hero {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .terms-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80') center/cover no-repeat;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        
+        .terms-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .terms-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .terms-hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .terms-breadcrumb {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+        
+        .terms-breadcrumb a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .terms-breadcrumb a:hover {
+            opacity: 0.8;
+        }
+        
+        .terms-breadcrumb i {
+            font-size: 0.7rem;
+            opacity: 0.7;
+        }
+        
+        /* Terms Content */
+        .terms-content {
+            padding: var(--section-padding);
+            background-color: white;
+        }
+        
+        .terms-section {
+            margin-bottom: 50px;
+        }
+        
+        .terms-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .terms-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .terms-section h3 {
+            font-size: 1.4rem;
+            margin: 30px 0 15px;
+            color: var(--dark);
+        }
+        
+        .terms-section p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+        
+        .terms-section ul, .terms-section ol {
+            margin-bottom: 20px;
+            padding-left: 30px;
+            color: var(--gray);
+        }
+        
+        .terms-section li {
+            margin-bottom: 10px;
+        }
+        
+        .terms-section table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            color: var(--gray);
+        }
+        
+        .terms-section table th {
+            background-color: var(--light-gray);
+            text-align: left;
+            padding: 12px 15px;
+            font-weight: 600;
+        }
+        
+        .terms-section table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .terms-section table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .highlight-box {
+            background-color: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .highlight-box p:last-child {
+            margin-bottom: 0;
+        }
+        
+        .update-date {
+            font-style: italic;
+            color: var(--gray);
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            .terms-hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            :root {
+                --section-padding: 60px 0;
+            }
+            
+            .terms-hero {
+                padding: 100px 0 50px;
+            }
+            
+            .terms-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .terms-hero {
+                padding: 90px 0 40px;
+            }
+            
+            .terms-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .terms-hero p {
+                font-size: 1rem;
+            }
+            
+            .terms-section table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            :root {
+                --section-padding: 50px 0;
+            }
+            
+            .terms-hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-section h2 {
+                font-size: 1.4rem;
+            }
+            
+            .terms-section h3 {
+                font-size: 1.2rem;
+            }
+            
+            .terms-section ul, .terms-section ol {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+    <!-- Terms Hero -->
+    <section class="terms-hero">
+        <div class="container">
+            <div class="terms-hero-content">
+                <div class="terms-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Terms of Service</span>
+                </div>
+                <h1>Terms of Service</h1>
+                <p>Please read these terms carefully before using our website or services.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Content -->
+    <section class="terms-content">
+        <div class="container">
+            <div class="terms-section">
+                <h2>1. Introduction</h2>
+                <p>These Terms of Service ("Terms") govern your access to and use of EvolTechs Software Solutions' ("we," "our," or "us") website, products, and services (collectively, "Services"). By accessing or using our Services, you agree to be bound by these Terms.</p>
+                
+                <div class="highlight-box">
+                    <p><strong>Last Updated:</strong> These Terms were last updated on June 15, 2023. We may update these Terms from time to time, and the updated version will be effective when posted.</p>
+                </div>
+            </div>
+            
+            <div class="terms-section">
+                <h2>2. Eligibility</h2>
+                <p>To use our Services, you must:</p>
+                <ul>
+                    <li>Be at least 18 years old or the age of majority in your jurisdiction</li>
+                    <li>Have the legal capacity to enter into a binding contract</li>
+                    <li>Not be barred from receiving services under applicable law</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>3. Accounts and Registration</h2>
+                <h3>3.1 Account Creation</h3>
+                <p>To access certain features, you may need to register for an account. You agree to:</p>
+                <ul>
+                    <li>Provide accurate, current, and complete information</li>
+                    <li>Maintain and promptly update your account information</li>
+                    <li>Maintain the security of your account credentials</li>
+                    <li>Accept all risks of unauthorized access</li>
+                </ul>
+                
+                <h3>3.2 Account Termination</h3>
+                <p>We reserve the right to suspend or terminate your account at our sole discretion if we believe you have violated these Terms.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>4. Services</h2>
+                <h3>4.1 Service Description</h3>
+                <p>We provide software development, consulting, and related services as described on our website. All services are subject to availability.</p>
+                
+                <h3>4.2 Modifications to Services</h3>
+                <p>We may modify, suspend, or discontinue any aspect of our Services at any time without notice.</p>
+                
+                <h3>4.3 Service Levels</h3>
+                <p>For paid services, specific service level agreements (SLAs) may apply and will be provided separately.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>5. Payments and Billing</h2>
+                <h3>5.1 Fees</h3>
+                <p>You agree to pay all fees as described in the applicable service agreement or order form. All fees are non-refundable unless otherwise stated.</p>
+                
+                <h3>5.2 Payment Methods</h3>
+                <p>We accept various payment methods as indicated during checkout. You represent that you have the legal right to use any payment method provided.</p>
+                
+                <h3>5.3 Taxes</h3>
+                <p>You are responsible for all applicable taxes, which will be added to your payment unless you provide us with a valid tax exemption certificate.</p>
+                
+                <h3>5.4 Price Changes</h3>
+                <p>We may change our prices at any time. Price changes for subscription services will take effect at the start of the next subscription period.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>6. Intellectual Property</h2>
+                <h3>6.1 Our Content</h3>
+                <p>All content on our website and Services, including text, graphics, logos, and software, is our property or our licensors' and is protected by intellectual property laws.</p>
+                
+                <h3>6.2 Your Content</h3>
+                <p>You retain ownership of any content you submit through our Services. By submitting content, you grant us a license to use it to provide our Services.</p>
+                
+                <h3>6.3 Feedback</h3>
+                <p>Any feedback you provide becomes our property without obligation to you.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>7. Acceptable Use</h2>
+                <p>You agree not to use our Services to:</p>
+                <ul>
+                    <li>Violate any laws or regulations</li>
+                    <li>Infringe on others' intellectual property rights</li>
+                    <li>Transmit viruses or malicious code</li>
+                    <li>Engage in fraudulent, deceptive, or abusive activities</li>
+                    <li>Interfere with others' use of our Services</li>
+                    <li>Attempt to gain unauthorized access to our systems</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>8. Third-Party Services</h2>
+                <p>Our Services may integrate with or link to third-party services. We are not responsible for:</p>
+                <ul>
+                    <li>The content or practices of third-party services</li>
+                    <li>Any damages or losses caused by third-party services</li>
+                </ul>
+                <p>Your use of third-party services is governed by their terms and policies.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>9. Disclaimers</h2>
+                <p>OUR SERVICES ARE PROVIDED "AS IS" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL WARRANTIES INCLUDING:</p>
+                <ul>
+                    <li>MERCHANTABILITY</li>
+                    <li>FITNESS FOR A PARTICULAR PURPOSE</li>
+                    <li>NON-INFRINGEMENT</li>
+                    <li>ERROR-FREE OR UNINTERRUPTED OPERATION</li>
+                </ul>
+                <p>Some jurisdictions don't allow certain disclaimers, so they may not apply to you.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>10. Limitation of Liability</h2>
+                <p>TO THE MAXIMUM EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR:</p>
+                <ul>
+                    <li>INDIRECT, INCIDENTAL, OR CONSEQUENTIAL DAMAGES</li>
+                    <li>LOST PROFITS OR REVENUE</li>
+                    <li>LOSS OF DATA OR BUSINESS INTERRUPTION</li>
+                    <li>UNAUTHORIZED ACCESS TO OR USE OF YOUR DATA</li>
+                </ul>
+                <p>OUR TOTAL LIABILITY FOR ANY CLAIM RELATED TO OUR SERVICES WILL NOT EXCEED THE AMOUNT YOU PAID US IN THE 12 MONTHS BEFORE THE CLAIM.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>11. Indemnification</h2>
+                <p>You agree to indemnify and hold us harmless from any claims, damages, or expenses (including attorneys' fees) arising from:</p>
+                <ul>
+                    <li>Your use of our Services</li>
+                    <li>Your violation of these Terms</li>
+                    <li>Your violation of any rights of a third party</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>12. Termination</h2>
+                <p>We may terminate or suspend your access to our Services at any time without notice for any reason, including if you violate these Terms.</p>
+                <p>Upon termination:</p>
+                <ul>
+                    <li>Your right to use our Services will immediately cease</li>
+                    <li>You must stop all use of our Services</li>
+                    <li>Any provisions that should survive termination will remain in effect</li>
+                </ul>
+            </div>
+            
+            <div class="terms-section">
+                <h2>13. Governing Law</h2>
+                <p>These Terms will be governed by the laws of the State of California without regard to its conflict of laws provisions.</p>
+                <p>Any disputes will be resolved in the state or federal courts located in San Francisco County, California.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>14. General Provisions</h2>
+                <h3>14.1 Entire Agreement</h3>
+                <p>These Terms constitute the entire agreement between you and us regarding our Services.</p>
+                
+                <h3>14.2 Waiver</h3>
+                <p>Our failure to enforce any right or provision will not be considered a waiver.</p>
+                
+                <h3>14.3 Severability</h3>
+                <p>If any provision is found to be unenforceable, the remaining provisions will remain in full effect.</p>
+                
+                <h3>14.4 Assignment</h3>
+                <p>You may not assign these Terms without our prior written consent. We may assign these Terms without restriction.</p>
+                
+                <h3>14.5 Notices</h3>
+                <p>We may provide notices through our website or by email to the address associated with your account.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>15. Changes to These Terms</h2>
+                <p>We may modify these Terms at any time. If we make material changes, we will notify you through our Services or by email.</p>
+                <p>Your continued use after changes become effective constitutes acceptance of the new Terms.</p>
+            </div>
+            
+            <div class="terms-section">
+                <h2>16. Contact Us</h2>
+                <p>If you have questions about these Terms, please contact us:</p>
+                <ul>
+                    <li><strong>By email:</strong> legal@evoltechs.com</li>
+                    <li><strong>By mail:</strong> EvolTechs Software Solutions, 123 Tech Park, Silicon Valley, San Francisco, CA 94107</li>
+                    <li><strong>By phone:</strong> +1 (800) 555-1234</li>
+                </ul>
+            </div>
+            
+            <div class="update-date">
+                <p><strong>Last Updated:</strong> June 15, 2023</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Highlight current section in view
+        document.addEventListener('DOMContentLoaded', function() {
+            const termsSections = document.querySelectorAll('.terms-section');
+            const navLinks = document.querySelectorAll('.terms-nav a');
+            
+            function highlightCurrentSection() {
+                let currentSection = '';
+                
+                termsSections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (window.scrollY >= (sectionTop - 100)) {
+                        currentSection = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSection}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+            
+            window.addEventListener('scroll', highlightCurrentSection);
+            highlightCurrentSection(); // Run once on load
+        });
+    </script>
+
+<div id="footer-container"></div>
+<script>
+    fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching the footer:', error));
+</script>
+</body>
+</html>

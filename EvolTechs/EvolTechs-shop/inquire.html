@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inquiry | EvolTechs Official Store</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --primary-light: #34495e;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --accent: #e74c3c;
+            --accent-dark: #c0392b;
+            --light: #ecf0f1;
+            --light-gray: #dfe6e9;
+            --dark: #2c3e50;
+            --text: #333333;
+            --text-light: #7f8c8d;
+            --text-lighter: #bdc3c7;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .inquiry-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 3rem;
+        }
+
+        .inquiry-header {
+            margin-bottom: 3rem;
+            grid-column: 1 / -1;
+        }
+
+        .inquiry-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary-dark);
+            margin-bottom: 1rem;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .inquiry-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .inquiry-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            max-width: 800px;
+        }
+
+        .product-info {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .product-image-container {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .product-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .product-specs {
+            margin-bottom: 2rem;
+        }
+
+        .spec-item {
+            display: flex;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .spec-name {
+            color: var(--text-light);
+            min-width: 120px;
+            font-weight: 500;
+        }
+
+        .spec-value {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .inquiry-form-container {
+            background: white;
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-header {
+            margin-bottom: 2rem;
+        }
+
+        .form-header h2 {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            color: var(--text-light);
+        }
+
+        .form-group {
+            margin-bottom: 1.8rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--primary-light);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .form-check {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-check-input {
+            margin-right: 0.8rem;
+        }
+
+        .form-check-label {
+            color: var(--text-light);
+        }
+
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefits-section {
+            margin-top: 3rem;
+            padding: 2rem;
+            background: rgba(52, 152, 219, 0.05);
+            border-radius: 10px;
+        }
+
+        .benefits-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .benefit-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+
+        .benefit-text {
+            color: var(--text-light);
+        }
+
+        .faq-section {
+            margin-top: 4rem;
+            grid-column: 1 / -1;
+        }
+
+        .faq-title {
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .faq-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: rgba(52, 152, 219, 0.05);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: var(--text-light);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            max-height: 500px;
+        }
+
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .inquiry-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-info {
+                position: static;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .inquiry-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .inquiry-header h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .inquiry-form-container {
+                padding: 1.5rem;
+            }
+            
+            .product-info {
+                padding: 1.5rem;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+    <div class="inquiry-container">
+        <div  style="margin-top: 70px;" class="inquiry-header animate-fade">
+            <h1>Product Inquiry</h1>
+            <p>Please complete this form to express your interest in our products. Our sales team will contact you with availability and purchasing options.</p>
+        </div>
+
+        <div class="product-info animate-fade delay-1">
+            <div class="product-image-container">
+                <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Pro X Laptop" class="product-image">
+            </div>
+            <!-- <h2 class="product-title">EvolTechs Pro X Laptop</h2>
+            <div class="product-price">$2,799.99</div>
+            <p class="product-description">Our flagship laptop with cutting-edge performance for professionals who demand the best. Features a stunning 4K OLED display and unparalleled processing power.</p>
+             -->
+            <div class="product-specs">
+                <!-- <div class="spec-item">
+                    <span class="spec-name">Processor:</span>
+                    <span class="spec-value">Intel Core i9-12900H</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-name">RAM:</span>
+                    <span class="spec-value">32GB DDR5</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-name">Storage:</span>
+                    <span class="spec-value">2TB NVMe SSD</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-name">Display:</span>
+                    <span class="spec-value">16" 4K OLED Touch</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-name">Graphics:</span>
+                    <span class="spec-value">NVIDIA RTX 3080</span>
+                </div>
+                <div class="spec-item">
+                    <span class="spec-name">Weight:</span>
+                    <span class="spec-value">4.2 lbs (1.9 kg)</span>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="inquiry-form-container animate-fade delay-2">
+            <div class="form-header">
+                <h2>Inquiry Details</h2>
+                <p>Complete this form to receive personalized assistance from our sales team.</p>
+            </div>
+
+            <form id="productInquiryForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName" class="form-label">First Name *</label>
+                        <input type="text" id="firstName" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName" class="form-label">Last Name *</label>
+                        <input type="text" id="lastName" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address *</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone Number *</label>
+                        <input type="tel" id="phone" class="form-control" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="company" class="form-label">Company/Organization</label>
+                    <input type="text" id="company" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="country" class="form-label">Country/Region *</label>
+                    <select id="country" class="form-control" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                        <option value="JP">Japan</option>
+                        <option value="SG">Singapore</option>
+                        <option value="AE">United Arab Emirates</option>
+                        <option value="NG">Nigeria</option>
+                        <option value="ZA">South Africa</option>
+                        <option value="KE">Kenya</option>
+                        <option value="GH">Ghana</option>
+                        <option value="OT">Other</option>
+                        <!-- More countries can be added -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Product of Interest *</label>
+                    <input type="text" class="form-control" >
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="quantity" class="form-label">Desired Quantity *</label>
+                        <select id="quantity" class="form-control" required>
+                            <option value="">Select Quantity</option>
+                            <option value="1">1 unit</option>
+                            <option value="2-5">2-5 units</option>
+                            <option value="6-10">6-10 units</option>
+                            <option value="11-20">11-20 units</option>
+                            <option value="20+">20+ units</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="timeframe" class="form-label">Purchase Timeframe *</label>
+                        <select id="timeframe" class="form-control" required>
+                            <option value="">Select Timeframe</option>
+                            <option value="immediately">Immediately</option>
+                            <option value="1-2 weeks">Within 1-2 weeks</option>
+                            <option value="1 month">Within 1 month</option>
+                            <option value="1-3 months">1-3 months</option>
+                            <option value="exploring">Just exploring options</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="purpose" class="form-label">Intended Use *</label>
+                    <select id="purpose" class="form-control" required>
+                        <option value="">Select Purpose</option>
+                        <option value="business">Business/Enterprise</option>
+                        <option value="education">Education</option>
+                        <option value="personal">Personal Use</option>
+                        <option value="gaming">Gaming</option>
+                        <option value="creative">Creative Work</option>
+                        <option value="development">Software Development</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="requirements" class="form-label">Specific Requirements</label>
+                    <textarea id="requirements" class="form-control" placeholder="Please specify any custom configurations, additional accessories, or special requirements you may have"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="comments" class="form-label">Additional Comments</label>
+                    <textarea id="comments" class="form-control" placeholder="Any other information that would help us serve you better"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" id="newsletter" class="form-check-input">
+                        <label for="newsletter" class="form-check-label">Subscribe to our newsletter for product updates and promotions</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit Inquiry</button>
+            </form>
+
+            <div class="benefits-section">
+                <h3 class="benefits-title">Why Inquire With EvolTechs?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <strong>Expert Guidance:</strong> Our specialists will help you choose the perfect configuration
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <strong>Volume Discounts:</strong> Special pricing available for bulk orders
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <strong>Custom Solutions:</strong> We can tailor products to your specific needs
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="benefit-text">
+                            <strong>Corporate Programs:</strong> Special offers for businesses and institutions
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section animate-fade delay-3">
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How soon will someone contact me after I submit this form?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Our sales team typically responds to inquiries within 1 business day. During peak periods, it may take up to 2 business days. For urgent inquiries, please call our sales hotline.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I get a quote for multiple products?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. You can specify multiple products in the "Specific Requirements" section of the form, or submit separate inquiries for each product you're interested in.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Do you offer educational or nonprofit discounts?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we offer special pricing for educational institutions and registered nonprofit organizations. Please mention this in your inquiry and provide any relevant documentation.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I customize the product specifications?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Many of our products can be customized to meet your specific requirements. Our sales team will discuss available options and any associated costs.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What payment methods do you accept?</span>
+                    <i class="fas fa-chevron-down faq-toggle"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We accept various payment methods including bank transfers, credit cards, and corporate purchase orders. Our sales representative will provide full payment details.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching the footer:', error));
+    </script>
+
+    <script>
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Form submission
+        document.getElementById('productInquiryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would typically send the form data to your server
+            alert('Thank you for your inquiry! Our sales team will contact you shortly.');
+            this.reset();
+        });
+
+        // Animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade');
+            elements.forEach(el => {
+                const elementPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+    </script>
+</body>
+</html>

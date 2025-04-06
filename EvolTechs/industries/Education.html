@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Services Solutions | EvolTechs</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --primary-light: #34495e;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --accent: #e74c3c;
+            --accent-dark: #c0392b;
+            --light: #ecf0f1;
+            --light-gray: #dfe6e9;
+            --dark: #2c3e50;
+            --text: #333333;
+            --text-light: #7f8c8d;
+            --text-lighter: #bdc3c7;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --financial-accent: #16a085;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .industry-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .industry-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .industry-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .industry-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Solutions Overview */
+        .solutions-overview {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--financial-accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 4px solid var(--financial-accent);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .solution-icon {
+            font-size: 2.5rem;
+            color: var(--financial-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-content {
+            padding: 2rem;
+        }
+
+        .solution-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .solution-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            color: var(--financial-accent);
+            margin-right: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            padding: 5rem 2rem;
+            background: #f9fbfd;
+        }
+
+        .challenges-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .challenges-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .challenges-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .challenges-content h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .challenges-list {
+            margin-top: 2rem;
+        }
+
+        .challenge-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .challenge-number {
+            background: var(--financial-accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .challenge-text h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .challenge-text p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Technology Stack */
+        .tech-stack-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--financial-accent);
+        }
+
+        .tech-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .tech-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .tech-category {
+            color: var(--financial-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Case Studies */
+        .case-studies-section {
+            padding: 5rem 2rem;
+            background: #f9fbfd;
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .case-study-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-study-card:hover .case-study-image img {
+            transform: scale(1.05);
+        }
+
+        .case-study-content {
+            padding: 2rem;
+        }
+
+        .case-study-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .case-study-subtitle {
+            color: var(--financial-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .case-study-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .case-study-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .case-stat {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .case-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--financial-accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Implementation Process */
+        .process-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--financial-accent) 0%, var(--secondary) 100%);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 3px solid var(--financial-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--financial-accent);
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .step-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 2rem;
+            background: #f9fbfd;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(22, 160, 133, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: var(--financial-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #138a72;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .challenges-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .challenges-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .industry-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .case-studies-grid, .solutions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .industry-hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .industry-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .stat-item {
+                min-width: 150px;
+                padding: 1.2rem 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .solutions-overview, .challenges-section, 
+            .tech-stack-section, .case-studies-section,
+            .process-section, .testimonials-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .industry-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+
+    <div class="industry-container">
+        <!-- Hero Section -->
+        <section class="industry-hero animate-fade">
+            <div class="hero-content">
+                <h1>Education Technology Solutions</h1>
+                <p>Empowering schools, universities, edtech companies, and educational institutions with cutting-edge technology solutions that enhance learning experiences, streamline administration, and prepare students for the digital future.</p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item animate-fade delay-1">
+                        <div class="stat-number">10+</div>
+                        <div class="stat-label">Years in EdTech</div>
+                    </div>
+                    <div class="stat-item animate-fade delay-2">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Educational Institutions</div>
+                    </div>
+                    <div class="stat-item animate-fade delay-3">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Students Impacted</div>
+                    </div>
+                    <div class="stat-item animate-fade delay-4">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Adoption Rate</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Solutions Overview -->
+        <section class="solutions-overview">
+            <div class="section-header animate-fade">
+                <h2>Comprehensive Education Technology Solutions</h2>
+                <p>We deliver tailored software solutions that address the unique challenges of modern educational institutions, combining pedagogical expertise with cutting-edge technology.</p>
+            </div>
+        
+            <div class="solutions-grid">
+                <!-- Learning Management -->
+                <div class="solution-card animate-fade delay-1">
+                    <div class="solution-content">
+                        <div class="solution-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="solution-title">Learning Management Systems</h3>
+                        <p class="solution-description">Comprehensive platforms for delivering, tracking, and managing educational courses and training programs.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Course creation and management</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Student progress tracking</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Assessment and grading tools</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Mobile learning access</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Student Information -->
+                <div class="solution-card animate-fade delay-2">
+                    <div class="solution-content">
+                        <div class="solution-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3 class="solution-title">Student Information Systems</h3>
+                        <p class="solution-description">Centralized platforms for managing all student data, from admissions to alumni relations.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Admissions and enrollment</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Attendance tracking</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Transcripts and records</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Parent and teacher portals</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Virtual Classroom -->
+                <div class="solution-card animate-fade delay-3">
+                    <div class="solution-content">
+                        <div class="solution-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="solution-title">Virtual Classroom Solutions</h3>
+                        <p class="solution-description">Interactive platforms for live online learning with engagement tools and analytics.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Real-time video conferencing</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Interactive whiteboards</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Breakout rooms</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Participation analytics</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Adaptive Learning -->
+                <div class="solution-card animate-fade delay-4">
+                    <div class="solution-content">
+                        <div class="solution-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3 class="solution-title">Adaptive Learning Platforms</h3>
+                        <p class="solution-description">AI-powered systems that personalize learning paths based on individual student needs.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Personalized learning paths</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Competency-based progression</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Real-time feedback</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Learning analytics dashboard</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- School Administration -->
+                <div class="solution-card animate-fade delay-1">
+                    <div class="solution-content">
+                        <div class="solution-icon">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <h3 class="solution-title">School Administration</h3>
+                        <p class="solution-description">Comprehensive tools for managing all aspects of school operations and administration.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Timetable scheduling</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Staff management</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Facility management</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Financial and budgeting tools</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Educational Content -->
+                <div class="solution-card animate-fade delay-2">
+                    <div class="solution-content">
+                        <div class="solution-icon">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="solution-title">Educational Content Platforms</h3>
+                        <p class="solution-description">Digital solutions for creating, managing, and delivering educational content.</p>
+                        
+                        <div class="solution-features">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Interactive e-books</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Multimedia learning resources</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Curriculum mapping</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                                <div>Standards alignment</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Challenges Section -->
+        <section class="challenges-section">
+            <div class="challenges-container">
+                <div class="challenges-image animate-fade">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Education Challenges">
+                </div>
+                <div class="challenges-content animate-fade delay-1">
+                    <h2>Addressing Critical Challenges in Education</h2>
+                    <p>The education sector faces unprecedented challenges from technology integration, changing learning models, and evolving student needs. We help institutions navigate these challenges with confidence.</p>
+                    
+                    <div class="challenges-list">
+                        <div class="challenge-item">
+                            <div class="challenge-number">1</div>
+                            <div class="challenge-text">
+                                <h3>Digital Transformation</h3>
+                                <p>Modernizing traditional classrooms while maintaining educational quality and managing technology adoption.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-item">
+                            <div class="challenge-number">2</div>
+                            <div class="challenge-text">
+                                <h3>Remote Learning</h3>
+                                <p>Creating engaging and effective online learning experiences that match in-person instruction.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-item">
+                            <div class="challenge-number">3</div>
+                            <div class="challenge-text">
+                                <h3>Data Security</h3>
+                                <p>Protecting sensitive student data against cyber threats while maintaining accessibility.</p>
+                            </div>
+                        </div>
+                        <div class="challenge-item">
+                            <div class="challenge-number">4</div>
+                            <div class="challenge-text">
+                                <h3>Personalized Learning</h3>
+                                <p>Meeting diverse student needs through differentiated instruction at scale.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Technology Stack -->
+        <section class="tech-stack-section">
+            <div class="section-header animate-fade">
+                <h2>Our Education Technology Stack</h2>
+                <p>We leverage a carefully selected set of technologies that meet the specific requirements of educational institutions for accessibility, security, and engagement.</p>
+            </div>
+        
+            <div class="tech-stack-grid">
+                <!-- LMS -->
+                <div class="tech-card animate-fade delay-1">
+                    <img src="https://logo.clearbit.com/moodle.com" alt="Moodle" class="tech-logo">
+                    <h3 class="tech-name">Moodle</h3>
+                    <div class="tech-category">Learning Management</div>
+                    <p class="tech-description">Open-source learning platform with comprehensive course management features.</p>
+                </div>
+        
+                <!-- Video -->
+                <div class="tech-card animate-fade delay-2">
+                    <img src="https://logo.clearbit.com/zoom.us" alt="Zoom" class="tech-logo">
+                    <h3 class="tech-name">Zoom for Education</h3>
+                    <div class="tech-category">Video Conferencing</div>
+                    <p class="tech-description">Secure video platform with education-specific features for virtual classrooms.</p>
+                </div>
+        
+                <!-- Cloud -->
+                <div class="tech-card animate-fade delay-3">
+                    <img src="https://logo.clearbit.com/google.com" alt="Google" class="tech-logo">
+                    <h3 class="tech-name">Google Workspace for Education</h3>
+                    <div class="tech-category">Collaboration</div>
+                    <p class="tech-description">Suite of productivity tools designed specifically for educational institutions.</p>
+                </div>
+        
+                <!-- SIS -->
+                <div class="tech-card animate-fade delay-4">
+                    <img src="https://logo.clearbit.com/powerschool.com" alt="PowerSchool" class="tech-logo">
+                    <h3 class="tech-name">PowerSchool</h3>
+                    <div class="tech-category">Student Information</div>
+                    <p class="tech-description">Comprehensive SIS for managing student data and school operations.</p>
+                </div>
+        
+                <!-- AI/ML -->
+                <div class="tech-card animate-fade delay-1">
+                    <img src="https://logo.clearbit.com/knewton.com" alt="Knewton" class="tech-logo">
+                    <h3 class="tech-name">Knewton Alta</h3>
+                    <div class="tech-category">Adaptive Learning</div>
+                    <p class="tech-description">AI-powered platform that personalizes learning materials for each student.</p>
+                </div>
+        
+                <!-- Data -->
+                <div class="tech-card animate-fade delay-2">
+                    <img src="https://logo.clearbit.com/tableau.com" alt="Tableau" class="tech-logo">
+                    <h3 class="tech-name">Tableau</h3>
+                    <div class="tech-category">Data Analytics</div>
+                    <p class="tech-description">Visual analytics platform for tracking student performance and institutional metrics.</p>
+                </div>
+        
+                <!-- Content -->
+                <div class="tech-card animate-fade delay-3">
+                    <img src="https://logo.clearbit.com/canvaslms.com" alt="Canvas" class="tech-logo">
+                    <h3 class="tech-name">Canvas</h3>
+                    <div class="tech-category">LMS Platform</div>
+                    <p class="tech-description">Modern learning management system with robust content delivery features.</p>
+                </div>
+        
+                <!-- Security -->
+                <div class="tech-card animate-fade delay-4">
+                    <img src="https://logo.clearbit.com/imperva.com" alt="Imperva" class="tech-logo">
+                    <h3 class="tech-name">Imperva</h3>
+                    <div class="tech-category">Cybersecurity</div>
+                    <p class="tech-description">Advanced protection for educational data and systems.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Case Studies -->
+        <section class="case-studies-section">
+            <div class="section-header animate-fade">
+                <h2>Success Stories in Education Innovation</h2>
+                <p>See how we've helped educational institutions transform teaching and learning experiences.</p>
+            </div>
+        
+            <div class="case-studies-grid">
+                <!-- Case Study 1 -->
+                <div class="case-study-card animate-fade delay-1">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350" alt="University Digital Transformation">
+                    </div>
+                    <div class="case-study-content">
+                        <div class="case-study-title">University Digital Transformation</div>
+                        <div class="case-study-subtitle">Higher Education</div>
+                        <p class="case-study-description">Implemented a campus-wide digital learning ecosystem for a major university, increasing student engagement by 60%.</p>
+                        <div class="case-study-stats">
+                            <div class="case-stat">
+                                <div class="case-stat-number">40K</div>
+                                <div class="case-stat-label">Students Served</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="case-stat-number">75%</div>
+                                <div class="case-stat-label">Adoption Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Case Study 2 -->
+                <div class="case-study-card animate-fade delay-2">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f" alt="School District">
+                    </div>
+                    <div class="case-study-content">
+                        <div class="case-study-title">K-12 District Modernization</div>
+                        <div class="case-study-subtitle">Public Schools</div>
+                        <p class="case-study-description">Deployed unified student information and learning management systems across a 50-school district.</p>
+                        <div class="case-study-stats">
+                            <div class="case-stat">
+                                <div class="case-stat-number">30%</div>
+                                <div class="case-stat-label">Efficiency Gain</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="case-stat-number">4.8★</div>
+                                <div class="case-stat-label">Teacher Rating</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Case Study 3 -->
+                <div class="case-study-card animate-fade delay-3">
+                    <div class="case-study-image">
+                        <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d" alt="Corporate Training">
+                    </div>
+                    <div class="case-study-content">
+                        <div class="case-study-title">Corporate Training Platform</div>
+                        <div class="case-study-subtitle">Professional Education</div>
+                        <p class="case-study-description">Developed a custom LMS for a Fortune 500 company reducing training costs by 45%.</p>
+                        <div class="case-study-stats">
+                            <div class="case-stat">
+                                <div class="case-stat-number">65%</div>
+                                <div class="case-stat-label">Completion Rate</div>
+                            </div>
+                            <div class="case-stat">
+                                <div class="case-stat-number">90%</div>
+                                <div class="case-stat-label">Satisfaction Score</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Implementation Process -->
+        <section class="process-section">
+            <div class="section-header animate-fade">
+                <h2>Our Implementation Methodology</h2>
+                <p>A structured approach to education technology implementation that ensures success while minimizing disruption to learning.</p>
+            </div>
+        
+            <div class="process-steps">
+                <div class="process-step animate-fade delay-1">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Needs Assessment</h3>
+                    <p class="step-description">Comprehensive analysis of institutional goals and pedagogical requirements.</p>
+                </div>
+                <div class="process-step animate-fade delay-2">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Solution Design</h3>
+                    <p class="step-description">Pedagogically sound architecture with accessibility and engagement at the core.</p>
+                </div>
+                <div class="process-step animate-fade delay-3">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Development & Testing</h3>
+                    <p class="step-description">Agile development with educator input and rigorous usability testing.</p>
+                </div>
+                <div class="process-step animate-fade delay-4">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Training & Support</h3>
+                    <p class="step-description">Comprehensive educator training and ongoing academic support.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Testimonials -->
+        <section class="testimonials-section">
+            <div class="section-header animate-fade">
+                <h2>Trusted by Education Leaders</h2>
+                <p>Hear from administrators and educators at institutions we've partnered with to enhance learning experiences.</p>
+            </div>
+        
+            <div class="testimonials-grid">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card animate-fade delay-1">
+                    <div class="testimonial-content">
+                        "EvolTechs transformed our university's digital learning infrastructure with minimal disruption. Their understanding of pedagogical needs was exceptional."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Dr. Sarah Williams">
+                        </div>
+                        <div class="author-info">
+                            <h4>Dr. Sarah Williams</h4>
+                            <p>Provost, State University</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card animate-fade delay-2">
+                    <div class="testimonial-content">
+                        "Their learning platform helped us improve student outcomes by 25% in the first year of implementation."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="James Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>James Rodriguez</h4>
+                            <p>Superintendent, City School District</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card animate-fade delay-3">
+                    <div class="testimonial-content">
+                        "The teacher training and support made all the difference in getting our faculty comfortable with the new technology."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/50.jpg" alt="Lisa Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Lisa Chen</h4>
+                            <p>Director of Technology, Private Academy</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA Section -->
+        <section class="cta-section animate-fade">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Educational Institution?</h2>
+                <p>Partner with us to build innovative learning solutions that engage students and streamline administration.</p>
+                <div class="cta-buttons">
+                    <a href="../EvolTechs-contact-us/contact-us.html" class="btn-primary">Schedule Consultation</a>
+                    <a href="#" class="btn-secondary">Download Solutions PDF</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching the footer:', error));
+    </script>
+
+    <script>
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade');
+            elements.forEach(el => {
+                const elementPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight * 0.8;
+                
+                if(elementPosition < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initialize tooltips for tech stack logos
+        tippy('.tech-logo', {
+            content: (reference) => reference.alt,
+            placement: 'top',
+            animation: 'shift-away',
+            theme: 'light'
+        });
+    </script>
+</body>
+</html>

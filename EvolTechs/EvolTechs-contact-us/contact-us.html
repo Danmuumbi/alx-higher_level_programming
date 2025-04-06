@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | EvolTechs Software Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Primary Meta Tags -->
+    <link rel="icon" type="image/png" sizes="16x16" href="logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../logo.png">
+<title>Contact EvolTechs | Cybersecurity Support</title>
+<meta name="description" content="Get in touch with EvolTechs' cybersecurity experts for sales inquiries, technical support, or partnership opportunities. We are here to provide tailored solutions to meet your security needs and ensure your organization's digital safety.">
+<meta name="keywords" content="contact EvolTechs, cybersecurity support, sales inquiry, technical help, partnership opportunities, customer support, IT assistance, cybersecurity consultation, technical support team, sales support, security solutions, connect with experts, enterprise security inquiries, digital safety, client relations, help desk, cybersecurity services, request a quote, business partnerships, professional support, cybersecurity advice">
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact EvolTechs",
+  "description": "Contact our cybersecurity experts",
+  "url": "https://www.evoltechs.com/contact",
+  "url": "https://www.evoltechs.top/contact",
+  "potentialAction": {
+    "@type": "ContactAction",
+    "target": "https://www.evoltechs.com/contact-form",
+    "target": "https://www.evoltechs.top/contact-form",
+    "query-input": "required name=contactReason"
+  }
+}
+</script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 120px 0 30px;
+            background-color: #f0f9ff;
+        }
+        
+        .breadcrumb-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-links a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* Contact Hero */
+        .contact-hero {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            text-align: center;
+        }
+        
+        .contact-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-hero h1 span {
+            color: var(--primary);
+        }
+        
+        .contact-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+        
+        /* Contact Content */
+        .contact-content {
+            padding: 80px 0;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        .contact-info {
+            padding-right: 30px;
+        }
+        
+        .contact-info h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-info p {
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .contact-text p, 
+        .contact-text a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-text a:hover {
+            color: var(--primary);
+        }
+        
+        .business-hours {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .business-hours h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .hours-list {
+            list-style: none;
+        }
+        
+        .hours-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid var(--light-gray);
+        }
+        
+        .hours-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .day {
+            color: var(--dark);
+            font-weight: 500;
+        }
+        
+        .time {
+            color: var(--gray);
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* Office Locations */
+        .office-locations {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .location-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .location-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .location-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .location-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .location-card:hover .location-image img {
+            transform: scale(1.05);
+        }
+        
+        .location-info {
+            padding: 25px;
+        }
+        
+        .location-info h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .location-address {
+            color: var(--gray);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .location-address i {
+            color: var(--primary);
+            margin-top: 3px;
+        }
+        
+        .location-contact {
+            margin-top: 20px;
+        }
+        
+        .location-contact a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .location-contact a:hover {
+            color: var(--primary-dark);
+        }
+        
+        .location-contact i {
+            width: 20px;
+        }
+        
+        /* CTA Section */
+        .contact-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .contact-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+  
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-links">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Contact Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h1 class="fade-in">Let's <span>Build</span> Something Together</h1>
+            <p class="fade-in delay-1">Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.</p>
+            <a href="#contact-form" class="cta-button fade-in delay-2">Send Us a Message</a>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-content">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info fade-in">
+                    <h2>Get in Touch</h2>
+                    <p>We're here to help and answer any questions you might have. We look forward to hearing from you and discussing how we can bring your software vision to life.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Our Headquarters</h3>
+                                <p>123 Tech Park Drive, Silicon Valley, CA 94025, United States</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Call Us</h3>
+                                <p><a href="tel:+254 797 192917">+254 797 192917</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-text">
+                                <h3>Email Us</h3>
+                                <p><a href="mailto:info@evoltechs.com">info@evoltechs.top</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="business-hours">
+                        <h3>Business Hours</h3>
+                        <ul class="hours-list">
+                            <li>
+                                <span class="day">Monday - Friday</span>
+                                <span class="time">9:00 AM - 6:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Saturday</span>
+                                <span class="time">10:00 AM - 4:00 PM</span>
+                            </li>
+                            <li>
+                                <span class="day">Sunday</span>
+                                <span class="time">Closed</span>
+                            </li>
+                        </ul>
+                    </div>
+
+
+
+                    <div class="consult-schedule">
+                        <h3 class="cs-heading">Consulting Times</h3>
+                        <ul class="cs-list">
+                            <li class="cs-period">
+                                <span class="cs-type">Online Meetings</span>
+                                <span class="cs-hours">Wednesday & Friday: 3:00 PM - 5:00 PM</span>
+                            </li>
+                            <li class="cs-period">
+                                <span class="cs-type">In-Person Consultations</span>
+                                <span class="cs-hours">Monday & Thursday: 10:00 AM - 12:00 PM</span>
+                            </li>
+                            <!-- <li class="cs-period">
+                                <span class="cs-type">Work Absence Sessions</span>
+                                <span class="cs-hours">Tuesday: 1:00 PM - 4:00 PM</span>
+                            </li> -->
+                            <li class="cs-period">
+                                <span class="cs-type">Weekend Availability</span>
+                                <span class="cs-hours">Saturday: 11:00 AM - 2:00 PM</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <style>
+                    .consult-schedule {
+                        background: #fff;
+                        padding: 1.5rem;
+                        border-radius: 8px;
+                        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+                        max-width: 600px;
+                        margin: 1rem auto;
+                        font-family: 'Segoe UI', system-ui, sans-serif;
+                    }
+                    
+                    .cs-heading {
+                        color: #1a365d;
+                        font-size: 1.3rem;
+                        margin: 0 0 1.2rem 0;
+                        padding-bottom: 0.8rem;
+                        border-bottom: 2px solid #e2e8f0;
+                    }
+                    
+                    .cs-list {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    .cs-period {
+                        padding: 0.8rem 0;
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 1rem;
+                        border-bottom: 1px solid #edf2f7;
+                    }
+                    
+                    .cs-period:last-child { border-bottom: 0; }
+                    
+                    .cs-type {
+                        color: #2d3748;
+                        font-weight: 500;
+                        position: relative;
+                        padding-left: 1.2rem;
+                    }
+                    
+                    .cs-type::before {
+                        content: "•";
+                        color: #4299e1;
+                        position: absolute;
+                        left: 0;
+                    }
+                    
+                    .cs-hours {
+                        color: #4a5568;
+                        font-size: 0.9rem;
+                        white-space: nowrap;
+                    }
+                    
+                    @media (max-width: 480px) {
+                        .cs-period { flex-direction: column; gap: 0.4rem; }
+                        .cs-hours { white-space: normal; }
+                    }
+                    </style>
+
+
+                </div>
+                
+                <div class="contact-form fade-in delay-1" id="contact-form">
+                    <h2 class="form-title">Send Us a Message</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-control">
+                        </div>
+                        <!-- <div class="form-group">
+                            <label for="service">Service Interested In</label>
+                            <select id="service" class="form-control">
+                                <option value="">Select a service</option>
+                                <option value="custom-software">Custom Software Development</option>
+                                <option value="mobile-apps">Mobile App Development</option>
+                                <option value="cloud-solutions">Cloud Solutions</option>
+                                <option value="ai-ml">AI & Machine Learning</option>
+                                <option value="cybersecurity">Cybersecurity Services</option>
+                                <option value="data-analytics">Data Analytics</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div> -->
+
+
+
+
+                        <!-- Modified Services Section -->
+<div class="form-group">
+    <label>Services Interested In</label>
+    <div class="checkbox-grid">
+        <div class="checkbox-item">
+            <input type="checkbox" id="custom-software" name="service" value="Custom Software Development">
+            <label for="custom-software">Custom Software Development</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="mobile-apps" name="service" value="Mobile App Development">
+            <label for="mobile-apps">Mobile App Development</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="cloud-solutions" name="service" value="Cloud Solutions">
+            <label for="cloud-solutions">Cloud Solutions</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="ai-ml" name="service" value="AI & Machine Learning">
+            <label for="ai-ml">AI & Machine Learning</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="cybersecurity" name="service" value="Cybersecurity Services">
+            <label for="cybersecurity">Cybersecurity Services</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox" id="data-analytics" name="service" value="Data Analytics">
+            <label for="data-analytics">Data Analytics</label>
+        </div>
+
+        <div class="checkbox-item">
+            <input type="checkbox" id="Website-Development" name="service" value="Website Development">
+            <label for="Website-Development">Website Development</label>
+        </div>
+
+        <div class="checkbox-item">
+            <input type="checkbox" id="other" name="service" value="Other">
+            <label for="other">Other</label>
+        </div>
+    </div>
+</div>
+
+<style>
+.checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.checkbox-item:hover {
+    background: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.checkbox-item input[type="checkbox"] {
+    margin-right: 10px;
+    width: 18px;
+    height: 18px;
+    accent-color: #004085;
+    cursor: pointer;
+}
+
+.checkbox-item label {
+    font-size: 15px;
+    color: #333;
+    cursor: pointer;
+    flex-grow: 1;
+}
+</style>
+         
+
+
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                    
+                    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+                    <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        emailjs.init('sRVxDINua8yFa9Q4U'); // Correct initialization
+                    
+                        const contactForm = document.getElementById('contactForm');
+                    
+                        if (contactForm) {
+                            contactForm.addEventListener('submit', function (event) {
+                                event.preventDefault();
+                    
+                                const name = document.getElementById('name').value.trim();
+                                const email = document.getElementById('email').value.trim();
+                                const phone = document.getElementById('phone').value.trim();
+                                const message = document.getElementById('message').value.trim();
+                    
+                                // Collecting selected services from checkboxes
+                                const serviceCheckboxes = document.querySelectorAll('input[name="service"]:checked');
+                                const selectedServices = Array.from(serviceCheckboxes).map(checkbox => checkbox.value);
+                    
+                                if (!name || !email || !message) {
+                                    alert('Please fill in all required fields before submitting.');
+                                    return;
+                                }
+                    
+                                const formData = {
+                                    name: name,
+                                    email: email,
+                                    phone: phone,
+                                    service: selectedServices.join(', '), // Join selected services into a string
+                                    message: message,
+                                };
+                    
+                                emailjs.send('service_rg3h301', 'template_yaghivl', formData, 'sRVxDINua8yFa9Q4U')
+                                    .then((response) => {
+                                        if (response.status === 200) {
+                                            alert('Thank you for your message!');
+                                            contactForm.reset();
+                                        } else {
+                                            alert('Failed to send your message. Please try again later.');
+                                        }
+                                    })
+                                    .catch((error) => {
+                                        console.error('EmailJS Error:', error);
+                                        alert('An error occurred while sending your message. Please check the console for more details.');
+                                    });
+                            });
+                        }
+                    });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    
+
+    <!-- Office Locations -->
+    <section class="office-locations">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Global Offices</h2>
+                <p>We have teams strategically located around the world to serve you better</p>
+            </div>
+            
+            <div class="locations-grid">
+                <div class="location-card fade-in delay-1">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="San Francisco Office">
+                    </div>
+                    <div class="location-info">
+                        <h3>San Francisco, USA</h3>
+                        <div class="location-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>123 Tech Park Drive, Silicon Valley, CA 94025</p>
+                        </div>
+                        <div class="location-contact">
+                            <a href="tel:+254 797 192917"><i class="fas fa-phone-alt"></i> +1 (800) 555-1234</a>
+                            <a href="mailto:info@evoltechs.top"><i class="fas fa-envelope"></i> info@evoltechs.top</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-card fade-in delay-2">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="London Office">
+                    </div>
+                    <div class="location-info">
+                        <h3>London, UK</h3>
+                        <div class="location-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>45 Tech Square, Shoreditch, London EC2A 4PQ</p>
+                        </div>
+                        <div class="location-contact">
+                            <a href="tel:+254 797 192917"><i class="fas fa-phone-alt"></i> +44 20 4567 8901</a>
+                            <a href="mailto:info@evoltechs.top"><i class="fas fa-envelope"></i> info@evoltechs.top</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-card fade-in delay-3">
+                    <div class="location-image">
+                        <img src="https://www.shutterstock.com/image-photo/nairobi-city-county-kenyas-capital-260nw-2461986001.jpg" alt="Nairobi Office">
+                    </div>
+                    <div class="location-info">
+                        <h3>Nairobi, Africa</h3>
+                        <div class="location-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>78 Muthithi Road Road,Westlands, Nairobi 00100</p>
+                        </div>
+                        <div class="location-contact">
+                            <a href="tel:+254 797 192917"><i class="fas fa-phone-alt"></i> +254 797 192917</a>
+                            <a href="mailto:info@evoltechs.top"><i class="fas fa-envelope"></i> info@evoltechs.top</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+        <div class="container">
+            <h2 class="fade-in">Ready to Start Your Project?</h2>
+            <p class="fade-in delay-1">Contact us today to discuss how we can help bring your software vision to life.</p>
+            <div class="cta-buttons fade-in delay-2" style="display: flex; justify-content: center; gap: 20px;">
+                <a href="tel:+18005551234" class="cta-button" style="background-color: var(--secondary); color: var(--dark);">Call Us Now</a>
+                <a href="#contact-form" class="cta-button" style="background-color: transparent; border: 2px solid white;">Send a Message</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.querySelector('.contact-form form');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Animation on scroll
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+
+
+<div id="footer-container"></div>
+
+<script>
+    fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching the footer:', error));
+</script>
+</body>
+</html>

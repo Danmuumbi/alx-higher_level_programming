@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | EvolTechs Software Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Primary Meta Tags -->
+<title>About EvolTechs | Our Mission in Cybersecurity</title>
+<meta name="description" content="Discover EvolTechs' mission to secure digital identities, explore our innovative cybersecurity solutions, and meet our team of experts with decades of combined experience in protecting organizations from cyber threats. Join us in our commitment to enhancing data security and privacy for businesses worldwide.">
+<meta name="keywords" content="about EvolTechs, company history, cybersecurity experts, leadership team, digital identity security, data protection, cyber threat prevention, IT security solutions, security best practices, innovative technology, corporate mission, cybersecurity leadership, team expertise, technology solutions, risk management, security consulting, identity access management, client success stories, digital transformation, secure digital solutions, cybersecurity training, cloud security, enterprise security, software development, technology innovation">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "About EvolTechs",
+  "description": "Our mission to secure digital identities worldwide",
+  "publisher": {
+    "@type": "Organization",
+    "name": "EvolTechs Software Solutions"
+  }
+}
+</script>
+
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --gray: #64748b;
+            --light-gray: #e2e8f0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+
+       
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 120px 0 30px;
+            background-color: #f0f9ff;
+        }
+        
+        .breadcrumb-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .breadcrumb-links a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-links a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+        
+        /* About Hero */
+        .about-hero {
+            padding: 60px 0;
+            background-color: #f0f9ff;
+        }
+        
+        .about-hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .about-hero-text p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .about-hero-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .about-hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+        
+        .about-hero-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        /* Our Story */
+        .our-story {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            background-color: var(--light-gray);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid var(--primary);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-right: 30px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: 30px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 20px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+        
+        /* Our Values */
+        .our-values {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+            border-top: 4px solid var(--primary);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .value-card p {
+            color: var(--gray);
+        }
+        
+        /* Leadership Team */
+        .leadership {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .team-member {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .team-member:hover .member-image img {
+            transform: scale(1.1);
+        }
+        
+        .member-info {
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .member-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+        }
+        
+        .member-info p.position {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .member-info p.bio {
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-link {
+            width: 35px;
+            height: 35px;
+            background-color: var(--light-gray);
+            color: var(--dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        /* Clients Section */
+        .our-clients {
+            padding: 80px 0;
+            background-color: #f8fafc;
+        }
+        
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            align-items: center;
+            margin-top: 50px;
+        }
+        
+        .client-logo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+        
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .client-logo img {
+            max-width: 100%;
+            max-height: 60px;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .client-logo:hover img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* CTA Section */
+        .about-cta {
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .about-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .about-cta p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+        
+        /* Footer */
+       
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1s ease forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .about-hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-hero-image {
+                order: -1;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .timeline::before {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin: 0 0 20px 30px;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(odd)::after,
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 80px;
+                left: 0;
+                right: 0;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+                z-index: 99;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .search-box {
+                margin-left: 0;
+                margin-top: 15px;
+                width: 100%;
+            }
+            
+            .search-box input {
+                width: 100%;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .about-hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+
+    <!-- Breadcrumb -->
+    <section class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-links">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>About Us</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Hero -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <div class="about-hero-text fade-in">
+                    <h1>Building the Future of <span>Software Engineering</span></h1>
+                    <p>EvolTechs Software Solutions is a leading technology company dedicated to delivering innovative software solutions that transform businesses and drive digital growth. Since our founding in 2010, we've been at the forefront of software engineering excellence.</p>
+                    <p>Our team of over 150 experts combines technical mastery with business acumen to create solutions that solve real-world challenges and deliver measurable results.</p>
+                    <a href="#leadership" class="cta-button">Meet Our Team</a>
+                </div>
+                <div class="about-hero-image fade-in delay-1">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="EvolTechs Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="our-story">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Story</h2>
+                <p>From humble beginnings to industry leadership - our journey of innovation and growth</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2010</div>
+                        <h3>Company Founded</h3>
+                        <p>EvolTechs was founded by three software engineers with a vision to create a company that prioritizes technical excellence and client success above all else.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2012</div>
+                        <h3>First Major Client</h3>
+                        <p>We secured our first enterprise client, developing a custom CRM solution that became the foundation for our reputation in business software.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015</div>
+                        <h3>Expansion to New Markets</h3>
+                        <p>Opened our first international office in London, beginning our journey as a global software solutions provider.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2017</div>
+                        <h3>AI Division Launched</h3>
+                        <p>Recognizing the potential of artificial intelligence, we established a dedicated AI research and development team.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-1">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2019</div>
+                        <h3>Reached 100 Employees</h3>
+                        <p>Our team grew to over 100 full-time engineers, designers, and business experts across three continents.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-2">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022</div>
+                        <h3>Industry Recognition</h3>
+                        <p>Named "Top Software Development Company" by TechAwards for our innovative work in cloud solutions.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in delay-3">
+                    <div class="timeline-content">
+                        <div class="timeline-date">2023</div>
+                        <h3>Current Day</h3>
+                        <p>With over 150 completed projects and 98% client satisfaction, we continue to push boundaries in software engineering.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values -->
+    <section class="our-values">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do at EvolTechs</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card fade-in delay-1">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation</h3>
+                    <p>We constantly push boundaries and explore new technologies to deliver cutting-edge solutions that give our clients a competitive edge.</p>
+                </div>
+                <div class="value-card fade-in delay-2">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>We believe in transparent communication, ethical practices, and doing what's right - even when no one is watching.</p>
+                </div>
+                <div class="value-card fade-in delay-3">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>Great software is built through teamwork. We work closely with clients and across disciplines to achieve exceptional results.</p>
+                </div>
+                <div class="value-card fade-in delay-1">
+                    <div class="value-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Excellence</h3>
+                    <p>We're never satisfied with "good enough." Our team pursues mastery in every line of code and every client interaction.</p>
+                </div>
+                <div class="value-card fade-in delay-2">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Passion</h3>
+                    <p>Our team genuinely loves what we do. This enthusiasm translates into creative solutions and exceptional service.</p>
+                </div>
+                <div class="value-card fade-in delay-3">
+                    <div class="value-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Impact</h3>
+                    <p>We measure our success by the tangible business results and positive change we create for our clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="leadership" id="leadership">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Leadership Team</h2>
+                <p>The visionary minds driving EvolTechs forward</p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-member fade-in delay-1">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Alex Johnson">
+                    </div>
+                    <div class="member-info">
+                        <h3>Alex Johnson</h3>
+                        <p class="position">CEO & Co-Founder</p>
+                        <p class="bio">Former lead engineer at TechCorp with 15+ years experience in enterprise software architecture.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member fade-in delay-2">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" alt="Sarah Chen">
+                    </div>
+                    <div class="member-info">
+                        <h3>Sarah Chen</h3>
+                        <p class="position">CTO & Co-Founder</p>
+                        <p class="bio">AI specialist with PhD in Computer Science from MIT and multiple patents in machine learning.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member fade-in delay-3">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1562788869-4ed32648eb72?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80" alt="Michael Rodriguez">
+                    </div>
+                    <div class="member-info">
+                        <h3>Michael Rodriguez</h3>
+                        <p class="position">VP of Engineering</p>
+                        <p class="bio">Led engineering teams at Fortune 500 companies before joining EvolTechs in 2015.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-stack-overflow"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member fade-in delay-1">
+                    <div class="member-image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=761&q=80" alt="Priya Patel">
+                    </div>
+                    <div class="member-info">
+                        <h3>Priya Patel</h3>
+                        <p class="position">VP of Client Success</p>
+                        <p class="bio">10+ years experience in building client relationships and ensuring project success.</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Clients -->
+    <section class="our-clients">
+        <div class="container">
+            <div class="section-title fade-in">
+                <h2>Trusted By Industry Leaders</h2>
+                <p>We're proud to partner with innovative companies across industries</p>
+            </div>
+            
+            <div class="clients-grid">
+                <div class="client-logo fade-in delay-1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCMtjbz4alfaFWo1whGrNaQBwUiInmFYSWWg&s" alt="TechCorp">
+                </div>
+                <div class="client-logo fade-in delay-2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLggOFSG6NNboawcjvyvM3KF-tPQAvfCaPgg&s" alt="GlobalBank">
+                </div>
+                <div class="client-logo fade-in delay-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHl-p2GVgBele2Lvq_HRGoiLWHNHMcIFo6AA&s" alt="HealthPlus">
+                </div>
+                <div class="client-logo fade-in delay-1">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe8ctxOIkCQs9EiP0qrkMB-kwzZ8bRrkMa0A&s" alt="RetailPro">
+                </div>
+                <div class="client-logo fade-in delay-2">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_TPNhxzXx4mB-nNsrm7ovkVnPDMhVCTFyCw&s" alt="FinEdge">
+                </div>
+                <div class="client-logo fade-in delay-3">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmTa1stg2DcYpZezIl-bC2OQellh8gCe2pg&s" alt="EduTech">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="about-cta">
+        <div class="container">
+            <h2 class="fade-in">Ready to Partner With a Software Engineering Leader?</h2>
+            <p class="fade-in delay-1">Whether you need a custom solution, technical expertise, or digital transformation guidance, our team is ready to help.</p>
+            <a href="../EvolTechs-contact-us/contact-us.html" class="cta-button fade-in delay-2" style="background-color: var(--secondary); color: var(--dark);">Get in Touch Today</a>
+        </div>
+    </section>
+
+          <!-- Company Culture Section -->
+          <section class="company-culture" style="padding: 80px 0; background-color: white;">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Our Culture</h2>
+                    <p>The heart and soul of EvolTechs - what makes us unique</p>
+                </div>
+                
+                <div class="culture-content" style="display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; margin-top: 50px;">
+                    <div class="culture-text fade-in">
+                        <h3 style="font-size: 1.8rem; margin-bottom: 20px; color: var(--dark);">More Than Just a Workplace</h3>
+                        <p style="color: var(--gray); margin-bottom: 20px;">At EvolTechs, we've built a culture that fosters innovation, collaboration, and continuous learning. We believe that great software comes from happy, engaged engineers who are passionate about their craft.</p>
+                        
+                        <div class="culture-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div class="highlight-item" style="margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <div style="width: 30px; height: 30px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-graduation-cap"></i>
+                                    </div>
+                                    <h4 style="font-size: 1.1rem;">Learning & Growth</h4>
+                                </div>
+                                <p style="color: var(--gray); font-size: 0.9rem;">Annual $5k education budget for each employee and weekly tech talks.</p>
+                            </div>
+                            <div class="highlight-item" style="margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <div style="width: 30px; height: 30px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <h4 style="font-size: 1.1rem;">Work-Life Balance</h4>
+                                </div>
+                                <p style="color: var(--gray); font-size: 0.9rem;">Flexible hours, remote options, and unlimited PTO for all team members.</p>
+                            </div>
+                            <div class="highlight-item" style="margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <div style="width: 30px; height: 30px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <h4 style="font-size: 1.1rem;">Innovation Time</h4>
+                                </div>
+                                <p style="color: var(--gray); font-size: 0.9rem;">20% of work time dedicated to personal projects and innovation.</p>
+                            </div>
+                            <div class="highlight-item" style="margin-bottom: 20px;">
+                                <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+                                    <div style="width: 30px; height: 30px; background-color: var(--primary); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                        <i class="fas fa-globe"></i>
+                                    </div>
+                                    <h4 style="font-size: 1.1rem;">Global Impact</h4>
+                                </div>
+                                <p style="color: var(--gray); font-size: 0.9rem;">Pro bono projects for non-profits and social causes each quarter.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="culture-image fade-in delay-1">
+                        <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Company Culture" style="width: 100%; height: auto; display: block;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards & Recognition -->
+        <section class="awards" style="padding: 80px 0; background-color: #f8fafc;">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Awards & Recognition</h2>
+                    <p>Industry recognition for our technical excellence and innovation</p>
+                </div>
+                
+                <div class="awards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px;">
+                    <div class="award-card fade-in delay-1" style="background-color: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;">
+                        <div style="width: 80px; height: 80px; background-color: #f0f9ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-trophy" style="font-size: 2rem; color: var(--secondary);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">TechAwards 2023</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 15px;">Best Software Engineering Firm</p>
+                        <p style="color: var(--gray);">Recognized for our innovative work in cloud-native application development.</p>
+                    </div>
+                    <div class="award-card fade-in delay-2" style="background-color: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;">
+                        <div style="width: 80px; height: 80px; background-color: #f0f9ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-medal" style="font-size: 2rem; color: var(--secondary);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">Global Tech 2022</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 15px;">AI Innovation Award</p>
+                        <p style="color: var(--gray);">For our groundbreaking work in machine learning applications for healthcare.</p>
+                    </div>
+                    <div class="award-card fade-in delay-3" style="background-color: white; border-radius: 10px; padding: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); text-align: center;">
+                        <div style="width: 80px; height: 80px; background-color: #f0f9ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                            <i class="fas fa-award" style="font-size: 2rem; color: var(--secondary);"></i>
+                        </div>
+                        <h3 style="margin-bottom: 10px;">Forbes 2021</h3>
+                        <p style="color: var(--primary); font-weight: 600; margin-bottom: 15px;">Top 100 Tech Companies</p>
+                        <p style="color: var(--gray);">Listed among the most innovative technology companies worldwide.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Global Presence -->
+        <section class="global-presence" style="padding: 80px 0; background-color: white;">
+            <div class="container">
+                <div class="section-title fade-in">
+                    <h2>Global Presence</h2>
+                    <p>We deliver solutions to clients across the world from our strategically located offices</p>
+                </div>
+                
+                <div class="map-container" style="position: relative; margin-top: 50px;">
+                    <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1476&q=80" alt="Global Presence" style="width: 100%; height: auto; border-radius: 10px; filter: brightness(0.95);">
+                    
+                    <div class="location-marker" style="position: absolute; top: 30%; left: 25%; transform: translate(-50%, -50%);">
+                        <div class="marker-dot" style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; border: 3px solid white;"></div>
+                        <div class="marker-label" style="position: absolute; left: 25px; top: -10px; background-color: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;">
+                            <strong>San Francisco</strong>
+                            <div style="font-size: 0.8rem; color: var(--gray);">HQ</div>
+                        </div>
+                    </div>
+                    
+                    <div class="location-marker" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);">
+                        <div class="marker-dot" style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; border: 3px solid white;"></div>
+                        <div class="marker-label" style="position: absolute; left: 25px; top: -10px; background-color: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;">
+                            <strong>New York</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="location-marker" style="position: absolute; top: 30%; left: 80%; transform: translate(-50%, -50%);">
+                        <div class="marker-dot" style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; border: 3px solid white;"></div>
+                        <div class="marker-label" style="position: absolute; left: 25px; top: -10px; background-color: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;">
+                            <strong>London</strong>
+                        </div>
+                    </div>
+
+                    <div class="location-marker" style="position: absolute; top: 30%; left: 80%; transform: translate(-50%, -50%);">
+                        <div class="marker-dot" style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; border: 3px solid white;"></div>
+                        <div class="marker-label" style="position: absolute; left: 25px; top: -10px; background-color: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;">
+                            <strong>Nairobi</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="location-marker" style="position: absolute; top: 60%; left: 75%; transform: translate(-50%, -50%);">
+                        <div class="marker-dot" style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; border: 3px solid white;"></div>
+                        <div class="marker-label" style="position: absolute; left: 25px; top: -10px; background-color: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;">
+                            <strong>Bangalore</strong>
+                        </div>
+                    </div>
+                    
+                    <div class="location-marker" style="position: absolute; top: 70%; left: 15%; transform: translate(-50%, -50%);">
+                        <div class="marker-dot" style="width: 15px; height: 15px; background-color: var(--primary); border-radius: 50%; border: 3px solid white;"></div>
+                        <div class="marker-label" style="position: absolute; left: 25px; top: -10px; background-color: white; padding: 5px 10px; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); white-space: nowrap;">
+                            <strong>Sydney</strong>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="office-stats" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px;">
+                    <div class="stat-item fade-in delay-1" style="text-align: center;">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 5px;">5</div>
+                        <div class="stat-label" style="color: var(--gray);">Continents</div>
+                    </div>
+                    <div class="stat-item fade-in delay-2" style="text-align: center;">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 5px;">12</div>
+                        <div class="stat-label" style="color: var(--gray);">Countries</div>
+                    </div>
+                    <div class="stat-item fade-in delay-3" style="text-align: center;">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 5px;">25+</div>
+                        <div class="stat-label" style="color: var(--gray);">Cities</div>
+                    </div>
+                    <div class="stat-item fade-in delay-1" style="text-align: center;">
+                        <div class="stat-number" style="font-size: 2.5rem; font-weight: 700; color: var(--primary); margin-bottom: 5px;">150+</div>
+                        <div class="stat-label" style="color: var(--gray);">Team Members</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Careers CTA -->
+        <section class="careers-cta" style="padding: 80px 0; background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%); color: white; text-align: center;">
+            <div class="container">
+                <h2 class="fade-in">Join Our Team</h2>
+                <p class="fade-in delay-1" style="max-width: 700px; margin: 0 auto 30px; font-size: 1.2rem;">We're always looking for talented engineers, designers, and tech enthusiasts to join our growing team.</p>
+                <div class="cta-buttons fade-in delay-2" style="display: flex; justify-content: center; gap: 20px;">
+                    <a href="../Evoltechs-careers/index.html" class="cta-button" style="background-color: var(--secondary); color: var(--dark);">View Open Positions</a>
+                    <a href="#" class="secondary-button" style="border-color: white; color: white;">Our Culture</a>
+                </div>
+            </div>
+        </section>
+
+        <div id="footer-container"></div>
+
+<script>
+    fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('footer-container').innerHTML = data;
+        })
+        .catch(error => console.error('Error fetching the footer:', error));
+</script>
+
+        <script>
+            // Interactive map markers
+            document.querySelectorAll('.location-marker').forEach(marker => {
+                marker.addEventListener('mouseenter', function() {
+                    this.querySelector('.marker-dot').style.transform = 'scale(1.3)';
+                    this.querySelector('.marker-label').style.display = 'block';
+                });
+                
+                marker.addEventListener('mouseleave', function() {
+                    this.querySelector('.marker-dot').style.transform = 'scale(1)';
+                });
+            });
+
+            // Newsletter form submission
+            const newsletterForm = document.querySelector('.newsletter-form');
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input').value;
+                // In a real implementation, you would send this to your backend
+                alert(`Thank you for subscribing with ${email}!`);
+                this.querySelector('input').value = '';
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

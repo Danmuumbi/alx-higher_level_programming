@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EvolTechs Official Store | Premium Tech & Branded Merchandise</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --primary-light: #34495e;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --accent: #e74c3c;
+            --accent-dark: #c0392b;
+            --light: #ecf0f1;
+            --light-gray: #dfe6e9;
+            --dark: #2c3e50;
+            --text: #333333;
+            --text-light: #7f8c8d;
+            --text-lighter: #bdc3c7;
+            --success: #27ae60;
+            --warning: #f39c12;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .shop-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .shop-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .shop-header h1 {
+            font-size: 3rem;
+            color: var(--primary-dark);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .shop-header h1::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 1.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .shop-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .shop-features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            width: 220px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .feature-text {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .category-section {
+            margin-bottom: 4rem;
+        }
+
+        .category-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            font-weight: 600;
+        }
+
+        .category-link {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .category-link:hover {
+            color: var(--secondary-dark);
+        }
+
+        .category-link i {
+            margin-left: 0.5rem;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-image-container {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+
+        .product-badges {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 2;
+        }
+
+        .product-badge {
+            padding: 0.35rem 0.9rem;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-new {
+            background-color: var(--secondary);
+            color: white;
+        }
+
+        .badge-popular {
+            background-color: var(--accent);
+            color: white;
+        }
+
+        .badge-premium {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .badge-limited {
+            background-color: var(--warning);
+            color: white;
+        }
+
+        .product-actions {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            z-index: 2;
+        }
+
+        .action-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .action-btn:hover {
+            background: var(--secondary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .product-details {
+            padding: 1.8rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-category {
+            color: var(--secondary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .product-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--dark);
+            line-height: 1.4;
+        }
+
+        .product-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .product-specs {
+            margin-bottom: 1.5rem;
+        }
+
+        .spec-item {
+            display: flex;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .spec-name {
+            color: var(--text-light);
+            min-width: 100px;
+        }
+
+        .spec-value {
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .product-old-price {
+            font-size: 1rem;
+            color: var(--text-lighter);
+            text-decoration: line-through;
+            margin-left: 0.5rem;
+        }
+
+        .inquire-btn {
+            padding: 0.8rem 1.8rem;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .inquire-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .view-all-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .view-all-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--secondary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+
+        .view-all-btn:hover {
+            background-color: var(--secondary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .contact-section {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+        }
+
+        .contact-section::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
+
+        .contact-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-section p {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            line-height: 1.8;
+        }
+
+        .contact-options {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-option {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem;
+            border-radius: 8px;
+            width: 220px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-option:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+
+        .contact-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-detail {
+            font-size: 0.95rem;
+            opacity: 0.8;
+        }
+
+        .contact-btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact-btn:hover {
+            background-color: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.4);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .shop-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .product-image-container {
+                height: 240px;
+            }
+            
+            .contact-section {
+                padding: 4rem 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .shop-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .shop-header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .shop-header p {
+                font-size: 1.1rem;
+            }
+            
+            .feature-card {
+                width: 160px;
+                padding: 1.2rem;
+            }
+            
+            .products-grid {
+                gap: 2rem;
+            }
+            
+            .product-details {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .shop-header h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                width: 140px;
+                padding: 1rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            
+            .product-image-container {
+                height: 300px;
+            }
+            
+            .product-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1.5rem;
+            }
+            
+            .inquire-btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .contact-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .contact-section h2 {
+                font-size: 2rem;
+            }
+            
+            .contact-section p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+    
+    <div  class="shop-container">
+        <div style="margin-top: 70px;" class="shop-header animate-fade">
+            <h1>EvolTechs Official Store</h1>
+            <p>Discover our exclusive collection of premium technology products and branded merchandise, meticulously crafted to embody the innovation and excellence that defines EvolTechs.</p>
+        </div>
+
+        <div class="shop-features">
+            <div class="feature-card animate-fade delay-1">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">Quality Assurance</h3>
+                <p class="feature-text">All products meet our rigorous quality standards</p>
+            </div>
+            <div class="feature-card animate-fade delay-2">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3 class="feature-title">Global Shipping</h3>
+                <p class="feature-text">Reliable delivery to your location</p>
+            </div>
+            <div class="feature-card animate-fade delay-3">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="feature-title">Dedicated Support</h3>
+                <p class="feature-text">Expert assistance for all your needs</p>
+            </div>
+            <div class="feature-card animate-fade delay-4">
+                <div class="feature-icon">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h3 class="feature-title">Official Merchandise</h3>
+                <p class="feature-text">Authentic EvolTechs products</p>
+            </div>
+        </div>
+
+        <!-- Premium Laptops Section -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title">Premium Laptops</h2>
+                <a href="#" class="category-link">
+                    View all laptops <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- EvolTechs Pro X -->
+                <div class="product-card animate-fade delay-1">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Pro X Laptop" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-premium">Premium</span>
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Laptops</span>
+                        <h3 class="product-title">EvolTechs Pro X Laptop</h3>
+                        <p class="product-description">Our flagship laptop with cutting-edge performance for professionals who demand the best. Features a stunning 4K OLED display and unparalleled processing power.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Processor:</span>
+                                <span class="spec-value">Intel Core i9-12900H</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">RAM:</span>
+                                <span class="spec-value">32GB DDR5</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Storage:</span>
+                                <span class="spec-value">2TB NVMe SSD</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Display:</span>
+                                <span class="spec-value">16" 4K OLED Touch</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$2,799.99</span>
+                                <span class="product-old-price">$3,199.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EvolTechs Ultra S -->
+                <div class="product-card animate-fade delay-2">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Ultra S Laptop" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-popular">Bestseller</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Laptops</span>
+                        <h3 class="product-title">EvolTechs Ultra S</h3>
+                        <p class="product-description">The perfect balance of performance and portability with a sleek magnesium alloy chassis and all-day battery life.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Processor:</span>
+                                <span class="spec-value">Intel Core i7-1260P</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">RAM:</span>
+                                <span class="spec-value">16GB LPDDR5</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Storage:</span>
+                                <span class="spec-value">1TB NVMe SSD</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Display:</span>
+                                <span class="spec-value">14" QHD+ IPS</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$1,899.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- EvolTechs Creator Edition -->
+                <div class="product-card animate-fade delay-3">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1545665277-5937489579f2?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Creator Edition" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-premium">Premium</span>
+                            <span class="product-badge badge-limited">Limited</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Laptops</span>
+                        <h3 class="product-title">Creator Edition</h3>
+                        <p class="product-description">Designed specifically for creative professionals with exceptional color accuracy and powerful graphics performance.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Processor:</span>
+                                <span class="spec-value">Intel Core i9-12900HK</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">GPU:</span>
+                                <span class="spec-value">NVIDIA RTX 3080 Ti</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">RAM:</span>
+                                <span class="spec-value">64GB DDR5</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Display:</span>
+                                <span class="spec-value">16" 4K Mini-LED</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$3,499.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-container">
+                <a href="#" class="view-all-btn">Browse All Laptops</a>
+            </div>
+        </div>
+
+        <!-- Apparel Collection -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title">Apparel Collection</h2>
+                <a href="#" class="category-link">
+                    View all apparel <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Premium Hoodie -->
+                <div class="product-card animate-fade delay-1">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Premium Hoodie" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-popular">Bestseller</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Apparel</span>
+                        <h3 class="product-title">Premium Tech Hoodie</h3>
+                        <p class="product-description">Our signature hoodie with premium fabric, reinforced stitching, and subtle EvolTechs branding. Available in multiple colors.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Material:</span>
+                                <span class="spec-value">80% Cotton, 20% Polyester</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Fit:</span>
+                                <span class="spec-value">Regular Fit</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Features:</span>
+                                <span class="spec-value">Kangaroo pocket, Adjustable hood</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$59.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Polo -->
+                <div class="product-card animate-fade delay-2">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Performance Polo" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Apparel</span>
+                        <h3 class="product-title">Performance Polo Shirt</h3>
+                        <p class="product-description">Moisture-wicking polo with UV protection and anti-microbial treatment. Perfect for business casual or golf.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Material:</span>
+                                <span class="spec-value">100% Performance Polyester</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Fit:</span>
+                                <span class="spec-value">Slim Fit</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Features:</span>
+                                <span class="spec-value">UPF 50+, Odor control</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$39.99</span>
+                                <span class="product-old-price">$49.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Cap -->
+                <div class="product-card animate-fade delay-3">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1521369909029-2afed882baee?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Tech Cap" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-popular">Bestseller</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Apparel</span>
+                        <h3 class="product-title">Tech Cap</h3>
+                        <p class="product-description">Structured cap with embroidered EvolTechs logo and moisture-wicking sweatband. Adjustable strap for perfect fit.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Material:</span>
+                                <span class="spec-value">100% Cotton twill</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Closure:</span>
+                                <span class="spec-value">Adjustable snapback</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Features:</span>
+                                <span class="spec-value">Curved brim, Moisture-wicking</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$29.99</span>
+                            </div>
+                            <button class="inquire-btn">Inquire</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-container">
+                <a href="#" class="view-all-btn">Browse All Apparel</a>
+            </div>
+        </div>
+
+        <!-- Accessories -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title">Tech Accessories</h2>
+                <a href="#" class="category-link">
+                    View all accessories <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Professional Laptop Bag -->
+                <div class="product-card animate-fade delay-1">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Professional Laptop Bag" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-popular">Bestseller</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accessories</span>
+                        <h3 class="product-title">Professional Laptop Bag</h3>
+                        <p class="product-description">Sleek and durable laptop bag with multiple compartments, water-resistant exterior, and padded shoulder strap.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Capacity:</span>
+                                <span class="spec-value">Up to 16" Laptop</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Material:</span>
+                                <span class="spec-value">Ballistic Nylon</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Features:</span>
+                                <span class="spec-value">RFID pocket, USB port</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$89.99</span>
+                            </div>
+                            <!-- <button class="inquire-btn">Inquire</button> -->
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium Leather Bag -->
+                <!-- <div class="product-card animate-fade delay-2">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1546938576-6e6a64f317cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Premium Leather Bag" -->
+
+
+
+                                        <!-- Premium Leather Bag -->
+                <div class="product-card animate-fade delay-2">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1546938576-6e6a64f317cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="EvolTechs Premium Leather Bag" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-premium">Premium</span>
+                            <span class="product-badge badge-limited">Limited</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accessories</span>
+                        <h3 class="product-title">Executive Leather Briefcase</h3>
+                        <p class="product-description">Handcrafted from full-grain Italian leather with anti-theft protection and RFID-blocking technology.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Material:</span>
+                                <span class="spec-value">Grade A Italian Leather</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Compartments:</span>
+                                <span class="spec-value">6+ Organizational Pockets</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Security:</span>
+                                <span class="spec-value">TSA Lock System</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$349.99</span>
+                                <span class="product-old-price">$399.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wireless Charging Station -->
+                <div class="product-card animate-fade delay-3">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1587030542169-10d3d3d5f3f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Wireless Charging Station" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Accessories</span>
+                        <h3 class="product-title">3-in-1 Wireless Charger</h3>
+                        <p class="product-description">Simultaneously charge your phone, watch, and earbuds with this premium aluminum charging station.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Output:</span>
+                                <span class="spec-value">15W Fast Charging</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Compatibility:</span>
+                                <span class="spec-value">Qi-Certified Devices</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Design:</span>
+                                <span class="spec-value">Non-Slip Silicone Surface</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$89.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-container">
+                <a href="#" class="view-all-btn">Explore All Accessories</a>
+            </div>
+        </div>
+
+        <!-- Smart Office Solutions Section -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title">Smart Office Solutions</h2>
+                <a href="#" class="category-link">
+                    View all <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+            <div class="products-grid">
+                <!-- Ergonomic Chair Pro -->
+                <div class="product-card animate-fade delay-1">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1505797149-43cad00680b9?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Ergonomic Chair" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-popular">Bestseller</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Office</span>
+                        <h3 class="product-title">ErgoMaster Pro Chair</h3>
+                        <p class="product-description">Certified ergonomic chair with 4D adjustable arms, lumbar support, and breathable mesh fabric.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Weight Capacity:</span>
+                                <span class="spec-value">330 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Adjustments:</span>
+                                <span class="spec-value">14-Point Customization</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Warranty:</span>
+                                <span class="spec-value">12 Years</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$599.99</span>
+                            </div>
+                            <!-- <button class="inquire-btn">Inquire</button> -->
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Standing Desk -->
+                <div class="product-card animate-fade delay-2">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1598300056393-4aac492f4344?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Standing Desk" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-new">New</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Office</span>
+                        <h3 class="product-title">Smart Standing Desk</h3>
+                        <p class="product-description">Motorized height-adjustable desk with built-in USB charging and programmable memory settings.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Height Range:</span>
+                                <span class="spec-value">24"-50"</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Load Capacity:</span>
+                                <span class="spec-value">220 lbs</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Features:</span>
+                                <span class="spec-value">Anti-Collision System</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$799.99</span>
+                            </div>
+                            
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conference System -->
+                <div class="product-card animate-fade delay-3">
+                    <div class="product-image-container">
+                        <img src="https://images.unsplash.com/photo-1591779051696-1c3fa1469a79?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Conference System" class="product-image">
+                        <div class="product-badges">
+                            <span class="product-badge badge-premium">Premium</span>
+                        </div>
+                        <div class="product-actions">
+                            <button class="action-btn" title="Quick view">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="action-btn" title="Add to wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-details">
+                        <span class="product-category">Office</span>
+                        <h3 class="product-title">4K Conference System</h3>
+                        <p class="product-description">All-in-one video conferencing solution with AI noise cancellation and 360° speaker tracking.</p>
+                        <div class="product-specs">
+                            <div class="spec-item">
+                                <span class="spec-name">Camera:</span>
+                                <span class="spec-value">4K Ultra HD</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Microphones:</span>
+                                <span class="spec-value">8 Array Beamforming</span>
+                            </div>
+                            <div class="spec-item">
+                                <span class="spec-name">Compatibility:</span>
+                                <span class="spec-value">Zoom/Teams Certified</span>
+                            </div>
+                        </div>
+                        <div class="product-footer">
+                            <div>
+                                <span class="product-price">$1,299.99</span>
+                            </div>
+                            <a href="inquire.html"><button class="inquire-btn">Inquire</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="view-all-container">
+                <a href="#" class="view-all-btn">Explore Office Solutions</a>
+            </div>
+        </div>
+
+        <!-- Enterprise Solutions Section -->
+        <div class="category-section">
+            <div class="category-header">
+                <h2 class="category-title">Enterprise Solutions</h2>
+                <a href="#" class="category-link">
+                    Learn More <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+            
+            <div class="enterprise-features">
+                <div class="enterprise-card animate-fade delay-1">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Cloud Infrastructure</h3>
+                    <p>Secure cloud solutions with 99.99% uptime SLA and global data centers</p>
+                </div>
+                
+                <div class="enterprise-card animate-fade delay-2">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>Enterprise-grade threat protection and compliance management</p>
+                </div>
+                
+                <div class="enterprise-card animate-fade delay-3">
+                    <div class="enterprise-icon">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3>Networking</h3>
+                    <p>High-performance networking solutions for any scale</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Newsletter Section -->
+        <div class="newsletter-section">
+            <div class="newsletter-content">
+                <h2>Stay Updated with EvolTechs</h2>
+                <p>Subscribe to our newsletter for exclusive offers, product launches, and tech insights</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe <i class="fas fa-arrow-right"></i></button>
+                </form>
+            </div>
+        </div>
+
+
+        
+
+        <!-- Add CSS for new sections -->
+        <style>
+            .enterprise-features {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 2rem;
+                margin: 3rem 0;
+            }
+
+            .enterprise-card {
+                background: white;
+                padding: 2rem;
+                border-radius: 10px;
+                text-align: center;
+                transition: transform 0.3s ease;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            }
+
+            .enterprise-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .enterprise-icon {
+                font-size: 2.5rem;
+                color: var(--secondary);
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-section {
+                background: var(--primary-dark);
+                color: white;
+                padding: 4rem 2rem;
+                margin-top: 5rem;
+                border-radius: 12px;
+                text-align: center;
+            }
+
+            .newsletter-content h2 {
+                font-size: 2.2rem;
+                margin-bottom: 1rem;
+            }
+
+            .newsletter-content p {
+                max-width: 600px;
+                margin: 0 auto 2rem;
+                opacity: 0.9;
+            }
+
+            .newsletter-form {
+                max-width: 600px;
+                margin: 0 auto;
+                display: flex;
+                gap: 1rem;
+            }
+
+            .newsletter-form input {
+                flex: 1;
+                padding: 1rem;
+                border: none;
+                border-radius: 6px;
+                font-size: 1rem;
+            }
+
+            .newsletter-form button {
+                padding: 1rem 2rem;
+                background: var(--accent);
+                border: none;
+                color: white;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            .newsletter-form button:hover {
+                background: var(--accent-dark);
+                transform: translateY(-2px);
+            }
+
+            @media (max-width: 768px) {
+                .newsletter-form {
+                    flex-direction: column;
+                }
+                
+                .newsletter-form button {
+                    width: 100%;
+                }
+            }
+        </style>
+
+     
+    </div>
+
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching the footer:', error));
+    </script>
+</body>
+</html>
+                        

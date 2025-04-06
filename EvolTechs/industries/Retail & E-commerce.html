@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Services Solutions | EvolTechs</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --primary-light: #34495e;
+            --secondary: #3498db;
+            --secondary-dark: #2980b9;
+            --accent: #e74c3c;
+            --accent-dark: #c0392b;
+            --light: #ecf0f1;
+            --light-gray: #dfe6e9;
+            --dark: #2c3e50;
+            --text: #333333;
+            --text-light: #7f8c8d;
+            --text-lighter: #bdc3c7;
+            --success: #27ae60;
+            --warning: #f39c12;
+            --financial-accent: #16a085;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        body {
+            background-color: #f5f7fa;
+            color: var(--text);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .industry-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .industry-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .industry-hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .industry-hero p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            min-width: 200px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.8;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Solutions Overview */
+        .solutions-overview {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--financial-accent);
+            border-radius: 2px;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .solution-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-top: 4px solid var(--financial-accent);
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .solution-icon {
+            font-size: 2.5rem;
+            color: var(--financial-accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .solution-content {
+            padding: 2rem;
+        }
+
+        .solution-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .solution-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .solution-features {
+            margin-top: 1.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+        }
+
+        .feature-icon {
+            color: var(--financial-accent);
+            margin-right: 0.8rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Challenges Section */
+        .challenges-section {
+            padding: 5rem 2rem;
+            background: #f9fbfd;
+        }
+
+        .challenges-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .challenges-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .challenges-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .challenges-content h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+
+        .challenges-list {
+            margin-top: 2rem;
+        }
+
+        .challenge-item {
+            display: flex;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .challenge-number {
+            background: var(--financial-accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .challenge-text h3 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .challenge-text p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Technology Stack */
+        .tech-stack-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .tech-stack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .tech-card {
+            background: white;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+        }
+
+        .tech-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--financial-accent);
+        }
+
+        .tech-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .tech-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .tech-category {
+            color: var(--financial-accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tech-description {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        /* Case Studies */
+        .case-studies-section {
+            padding: 5rem 2rem;
+            background: #f9fbfd;
+        }
+
+        .case-studies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .case-study-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .case-study-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+
+        .case-study-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .case-study-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .case-study-card:hover .case-study-image img {
+            transform: scale(1.05);
+        }
+
+        .case-study-content {
+            padding: 2rem;
+        }
+
+        .case-study-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--primary);
+        }
+
+        .case-study-subtitle {
+            color: var(--financial-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .case-study-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .case-study-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .case-stat {
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .case-stat-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--financial-accent);
+            margin-bottom: 0.3rem;
+        }
+
+        .case-stat-label {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Implementation Process */
+        .process-section {
+            padding: 5rem 2rem;
+            background: white;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--financial-accent) 0%, var(--secondary) 100%);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 3px solid var(--financial-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--financial-accent);
+            margin: 0 auto 1.5rem;
+        }
+
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .step-description {
+            color: var(--text-light);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonials-section {
+            padding: 5rem 2rem;
+            background: #f9fbfd;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 5rem;
+            color: rgba(22, 160, 133, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text);
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-info h4 {
+            font-size: 1.1rem;
+            color: var(--primary);
+            margin-bottom: 0.2rem;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 2rem;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: var(--financial-accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 5px 15px rgba(22, 160, 133, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #138a72;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.4);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .challenges-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .challenges-image {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .industry-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .case-studies-grid, .solutions-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .industry-hero {
+                padding: 4rem 1.5rem;
+            }
+            
+            .industry-hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .industry-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .stat-item {
+                min-width: 150px;
+                padding: 1.2rem 1.5rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .solutions-overview, .challenges-section, 
+            .tech-stack-section, .case-studies-section,
+            .process-section, .testimonials-section {
+                padding: 3rem 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 4rem 1.5rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .industry-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .stat-item {
+                width: 100%;
+                max-width: 250px;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade {
+            opacity: 0;
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+
+    <div id="header-container"></div>
+    <script>
+        // Fetch the header HTML and insert it into the header-container
+        fetch('../EvolTechs-Header-Footer/header.html') // Update this path accordingly
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+
+                // Now that the header is loaded, we can add the JavaScript functionality
+                initializeHeader(); // Call a function to initialize any JS functionality
+            })
+            .catch(error => console.error('Error fetching the header:', error));
+
+        function initializeHeader() {
+            // Mobile menu functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+
+            function toggleMenu() {
+                navLinks.classList.toggle('active');
+                document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
+                
+                // Toggle icon between bars and times
+                const icon = mobileMenuBtn.querySelector('i');
+                if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                } else {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+
+            // Dropdown functionality
+            const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+            dropdownToggles.forEach(toggle => {
+                toggle.addEventListener('click', function(e) {
+                    if (window.innerWidth <= 1024) {
+                        e.preventDefault();
+                        const dropdown = this.parentElement;
+                        dropdown.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Chat button functionality
+            const chatBtn = document.getElementById('chat-btn');
+            chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chat service would open here.');
+            });
+        }
+    </script>
+
+    <div class="industry-container">
+        <!-- Hero Section -->
+        <section class="industry-hero animate-fade">
+            <section class="industry-hero animate-fade">
+                <div class="hero-content">
+                    <h1>Retail & E-commerce Technology Solutions</h1>
+                    <p>Empowering retailers, e-commerce businesses, and omnichannel brands with cutting-edge technology solutions that drive sales, enhance customer experiences, and streamline operations in today's digital marketplace.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item animate-fade delay-1">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years in Retail Tech</div>
+                        </div>
+                        <div class="stat-item animate-fade delay-2">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Retail Clients</div>
+                        </div>
+                        <div class="stat-item animate-fade delay-3">
+                            <div class="stat-number">$5B+</div>
+                            <div class="stat-label">Annual GMV Powered</div>
+                        </div>
+                        <div class="stat-item animate-fade delay-4">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Uptime Guarantee</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Solutions Overview -->
+            <section class="solutions-overview">
+                <div class="section-header animate-fade">
+                    <h2>Comprehensive Retail & E-commerce Solutions</h2>
+                    <p>We deliver tailored technology solutions that address the unique challenges of modern retailers, combining deep industry expertise with cutting-edge innovation.</p>
+                </div>
+            
+                <div class="solutions-grid">
+                    <!-- E-commerce Platforms -->
+                    <div class="solution-card animate-fade delay-1">
+                        <div class="solution-content">
+                            <div class="solution-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <h3 class="solution-title">E-commerce Platforms</h3>
+                            <p class="solution-description">Custom-built online stores with seamless shopping experiences across all devices and channels.</p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Headless commerce architecture</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Mobile-optimized checkouts</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>AI-powered product recommendations</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Multi-currency & language support</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- POS Systems -->
+                    <div class="solution-card animate-fade delay-2">
+                        <div class="solution-content">
+                            <div class="solution-icon">
+                                <i class="fas fa-cash-register"></i>
+                            </div>
+                            <h3 class="solution-title">POS & In-Store Systems</h3>
+                            <p class="solution-description">Modern point-of-sale solutions that unify online and offline sales channels.</p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Cloud-based POS systems</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Mobile POS for associates</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Inventory management integration</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Customer loyalty program support</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Omnichannel -->
+                    <div class="solution-card animate-fade delay-3">
+                        <div class="solution-content">
+                            <div class="solution-icon">
+                                <i class="fas fa-retweet"></i>
+                            </div>
+                            <h3 class="solution-title">Omnichannel Retail</h3>
+                            <p class="solution-description">Seamless shopping experiences across web, mobile, social, and physical stores.</p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Buy online, pick up in-store (BOPIS)</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Endless aisle capabilities</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Unified customer profiles</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Real-time inventory visibility</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Marketplace -->
+                    <div class="solution-card animate-fade delay-4">
+                        <div class="solution-content">
+                            <div class="solution-icon">
+                                <i class="fas fa-store"></i>
+                            </div>
+                            <h3 class="solution-title">Marketplace Platforms</h3>
+                            <p class="solution-description">Scalable platforms for multi-vendor marketplaces and dropshipping businesses.</p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Vendor management systems</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Commission & payment processing</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Product catalog management</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Review & rating systems</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Inventory -->
+                    <div class="solution-card animate-fade delay-1">
+                        <div class="solution-content">
+                            <div class="solution-icon">
+                                <i class="fas fa-boxes"></i>
+                            </div>
+                            <h3 class="solution-title">Inventory & Supply Chain</h3>
+                            <p class="solution-description">Intelligent systems to optimize inventory levels and supply chain operations.</p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Demand forecasting</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Automated replenishment</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Warehouse management</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Supplier collaboration portals</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Personalization -->
+                    <div class="solution-card animate-fade delay-2">
+                        <div class="solution-content">
+                            <div class="solution-icon">
+                                <i class="fas fa-user-tag"></i>
+                            </div>
+                            <h3 class="solution-title">Customer Personalization</h3>
+                            <p class="solution-description">AI-driven solutions to deliver tailored shopping experiences at scale.</p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Behavioral segmentation</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Dynamic pricing engines</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Personalized email campaigns</div>
+                                </div>
+                                <div class="feature-item">
+                                    <div class="feature-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div>Recommendation algorithms</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Challenges Section -->
+            <section class="challenges-section">
+                <div class="challenges-container">
+                    <div class="challenges-image animate-fade">
+                        <img src="https://images.unsplash.com/photo-1556740734-9f9ca0e04646?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Retail Challenges">
+                    </div>
+                    <div class="challenges-content animate-fade delay-1">
+                        <h2>Addressing Critical Challenges in Retail & E-commerce</h2>
+                        <p>The retail industry faces unprecedented disruption from changing consumer behavior, digital transformation, and supply chain complexities. We help businesses navigate these challenges with confidence.</p>
+                        
+                        <div class="challenges-list">
+                            <div class="challenge-item">
+                                <div class="challenge-number">1</div>
+                                <div class="challenge-text">
+                                    <h3>Omnichannel Integration</h3>
+                                    <p>Creating seamless experiences across online and offline channels while maintaining inventory accuracy.</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-number">2</div>
+                                <div class="challenge-text">
+                                    <h3>Customer Expectations</h3>
+                                    <p>Meeting demand for personalized, fast, and frictionless shopping experiences across all touchpoints.</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-number">3</div>
+                                <div class="challenge-text">
+                                    <h3>Supply Chain Disruptions</h3>
+                                    <p>Managing inventory and logistics in an era of global uncertainty and rising costs.</p>
+                                </div>
+                            </div>
+                            <div class="challenge-item">
+                                <div class="challenge-number">4</div>
+                                <div class="challenge-text">
+                                    <h3>Data Security</h3>
+                                    <p>Protecting customer payment information and personal data against increasing cyber threats.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Technology Stack -->
+            <section class="tech-stack-section">
+                <div class="section-header animate-fade">
+                    <h2>Our Retail & E-commerce Technology Stack</h2>
+                    <p>We leverage a carefully selected set of technologies that meet the demanding requirements of modern retail businesses for performance, scalability, and customer experience.</p>
+                </div>
+            
+                <div class="tech-stack-grid">
+                    <!-- E-commerce -->
+                    <div class="tech-card animate-fade delay-1">
+                        <img src="https://logo.clearbit.com/shopify.com" alt="Shopify" class="tech-logo">
+                        <h3 class="tech-name">Shopify Plus</h3>
+                        <div class="tech-category">E-commerce Platform</div>
+                        <p class="tech-description">Enterprise-grade commerce solution for high-volume retailers with global ambitions.</p>
+                    </div>
+            
+                    <!-- Headless -->
+                    <div class="tech-card animate-fade delay-2">
+                        <img src="https://logo.clearbit.com/commercetools.com" alt="Commercetools" class="tech-logo">
+                        <h3 class="tech-name">Commercetools</h3>
+                        <div class="tech-category">Headless Commerce</div>
+                        <p class="tech-description">API-first commerce platform enabling flexible, omnichannel experiences.</p>
+                    </div>
+            
+                    <!-- POS -->
+                    <div class="tech-card animate-fade delay-3">
+                        <img src="https://logo.clearbit.com/squareup.com" alt="Square" class="tech-logo">
+                        <h3 class="tech-name">Square POS</h3>
+                        <div class="tech-category">Point of Sale</div>
+                        <p class="tech-description">Integrated retail POS system with payments and inventory management.</p>
+                    </div>
+            
+                    <!-- PIM -->
+                    <div class="tech-card animate-fade delay-4">
+                        <img src="https://logo.clearbit.com/akeneo.com" alt="Akeneo" class="tech-logo">
+                        <h3 class="tech-name">Akeneo</h3>
+                        <div class="tech-category">Product Management</div>
+                        <p class="tech-description">Product Information Management (PIM) system for centralized product data.</p>
+                    </div>
+            
+                    <!-- Search -->
+                    <div class="tech-card animate-fade delay-1">
+                        <img src="https://logo.clearbit.com/algolia.com" alt="Algolia" class="tech-logo">
+                        <h3 class="tech-name">Algolia</h3>
+                        <div class="tech-category">Search & Discovery</div>
+                        <p class="tech-description">AI-powered search and merchandising for superior product discovery.</p>
+                    </div>
+            
+                    <!-- Personalization -->
+                    <div class="tech-card animate-fade delay-2">
+                        <img src="https://logo.clearbit.com/segment.com" alt="Segment" class="tech-logo">
+                        <h3 class="tech-name">Segment</h3>
+                        <div class="tech-category">Customer Data</div>
+                        <p class="tech-description">Customer data platform for unified customer profiles and personalization.</p>
+                    </div>
+            
+                    <!-- OMS -->
+                    <div class="tech-card animate-fade delay-3">
+                        <img src="https://logo.clearbit.com/orderdynamics.com" alt="OrderDynamics" class="tech-logo">
+                        <h3 class="tech-name">OrderDynamics</h3>
+                        <div class="tech-category">Order Management</div>
+                        <p class="tech-description">Distributed order management system for omnichannel fulfillment.</p>
+                    </div>
+            
+                    <!-- Analytics -->
+                    <div class="tech-card animate-fade delay-4">
+                        <img src="https://logo.clearbit.com/amplitude.com" alt="Amplitude" class="tech-logo">
+                        <h3 class="tech-name">Amplitude</h3>
+                        <div class="tech-category">Analytics</div>
+                        <p class="tech-description">Product analytics for understanding customer behavior and journeys.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Case Studies -->
+            <section class="case-studies-section">
+                <div class="section-header animate-fade">
+                    <h2>Retail Transformation Success Stories</h2>
+                    <p>See how we've helped leading retailers and e-commerce businesses achieve digital transformation and growth.</p>
+                </div>
+            
+                <div class="case-studies-grid">
+                    <!-- Case Study 1 -->
+                    <div class="case-study-card animate-fade delay-1">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1556740734-9f9ca0e04646" alt="Omnichannel Retail">
+                        </div>
+                        <div class="case-study-content">
+                            <div class="case-study-title">National Retailer Omnichannel Transformation</div>
+                            <div class="case-study-subtitle">Department Store</div>
+                            <p class="case-study-description">Implemented unified commerce platform for 250+ stores, enabling BOPIS and endless aisle capabilities.</p>
+                            <div class="case-study-stats">
+                                <div class="case-stat">
+                                    <div class="case-stat-number">35%</div>
+                                    <div class="case-stat-label">Online Sales Increase</div>
+                                </div>
+                                <div class="case-stat">
+                                    <div class="case-stat-number">20%</div>
+                                    <div class="case-stat-label">In-Store Traffic Growth</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Case Study 2 -->
+                    <div class="case-study-card animate-fade delay-2">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1556740734-9f9ca0e04646" alt="Marketplace">
+                        </div>
+                        <div class="case-study-content">
+                            <div class="case-study-title">Marketplace Platform Launch</div>
+                            <div class="case-study-subtitle">Specialty Retail</div>
+                            <p class="case-study-description">Built multi-vendor marketplace connecting 500+ artisans with global customers.</p>
+                            <div class="case-study-stats">
+                                <div class="case-stat">
+                                    <div class="case-stat-number">10x</div>
+                                    <div class="case-stat-label">Product Catalog Growth</div>
+                                </div>
+                                <div class="case-stat">
+                                    <div class="case-stat-number">$50M</div>
+                                    <div class="case-stat-label">First Year GMV</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Case Study 3 -->
+                    <div class="case-study-card animate-fade delay-3">
+                        <div class="case-study-image">
+                            <img src="https://images.unsplash.com/photo-1556740734-9f9ca0e04646" alt="Personalization">
+                        </div>
+                        <div class="case-study-content">
+                            <div class="case-study-title">AI-Powered Personalization</div>
+                            <div class="case-study-subtitle">Fashion E-commerce</div>
+                            <p class="case-study-description">Implemented recommendation engine and dynamic pricing for premium apparel brand.</p>
+                            <div class="case-study-stats">
+                                <div class="case-stat">
+                                    <div class="case-stat-number">28%</div>
+                                    <div class="case-stat-label">Average Order Value Increase</div>
+                                </div>
+                                <div class="case-stat">
+                                    <div class="case-stat-number">45%</div>
+                                    <div class="case-stat-label">Repeat Purchase Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Implementation Process -->
+            <section class="process-section">
+                <div class="section-header animate-fade">
+                    <h2>Our Retail Implementation Methodology</h2>
+                    <p>A structured approach to retail technology implementation that ensures success while minimizing business disruption.</p>
+                </div>
+            
+                <div class="process-steps">
+                    <div class="process-step animate-fade delay-1">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">Discovery & Strategy</h3>
+                        <p class="step-description">Comprehensive analysis of business needs, customer journeys, and technical requirements.</p>
+                    </div>
+                    <div class="process-step animate-fade delay-2">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">Experience Design</h3>
+                        <p class="step-description">Customer-centric design of digital and physical shopping experiences.</p>
+                    </div>
+                    <div class="process-step animate-fade delay-3">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">Development & Integration</h3>
+                        <p class="step-description">Agile development with seamless integration to existing systems.</p>
+                    </div>
+                    <div class="process-step animate-fade delay-4">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">Launch & Optimization</h3>
+                        <p class="step-description">Phased rollout with continuous performance monitoring and improvement.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Testimonials -->
+            <section class="testimonials-section">
+                <div class="section-header animate-fade">
+                    <h2>Trusted by Retail Leaders</h2>
+                    <p>Hear from executives at brands we've partnered with to drive their digital transformation.</p>
+                </div>
+            
+                <div class="testimonials-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card animate-fade delay-1">
+                        <div class="testimonial-content">
+                            "EvolTechs transformed our e-commerce platform, resulting in a 40% increase in conversion rates and 35% growth in online revenue."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Lisa Rodriguez">
+                            </div>
+                            <div class="author-info">
+                                <h4>Lisa Rodriguez</h4>
+                                <p>VP Digital, Fashion Retail Group</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card animate-fade delay-2">
+                        <div class="testimonial-content">
+                            "Their omnichannel solution helped us unify our inventory and create seamless customer experiences across all touchpoints."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/55.jpg" alt="David Kim">
+                            </div>
+                            <div class="author-info">
+                                <h4>David Kim</h4>
+                                <p>CIO, National Department Store</p>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card animate-fade delay-3">
+                        <div class="testimonial-content">
+                            "The AI personalization platform delivered exceptional ROI, increasing our average order value by 28% in the first quarter."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>CMO, Luxury Beauty Brand</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CTA Section -->
+            <section class="cta-section animate-fade">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Retail Business?</h2>
+                    <p>Partner with us to build innovative commerce solutions that drive sales and customer loyalty.</p>
+                    <div class="cta-buttons">
+                        <a href="../EvolTechs-contact-us/contact-us.html" class="btn-primary">Schedule Consultation</a>
+                        <a href="#" class="btn-secondary">Download Retail Solutions PDF</a>
+                    </div>
+                </div>
+            </section>
+    </div>
+
+
+
+    <div id="footer-container"></div>
+    <script>
+        fetch('../EvolTechs-Header-Footer/footer.html') // Update the path if needed
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.text();
+            })
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            })
+            .catch(error => console.error('Error fetching the footer:', error));
+    </script>
+
+    <script>
+        // Animate elements on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-fade');
+            elements.forEach(el => {
+                const elementPosition = el.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight * 0.8;
+                
+                if(elementPosition < screenPosition) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        window.addEventListener('load', animateOnScroll);
+        window.addEventListener('scroll', animateOnScroll);
+
+        // Initialize tooltips for tech stack logos
+        tippy('.tech-logo', {
+            content: (reference) => reference.alt,
+            placement: 'top',
+            animation: 'shift-away',
+            theme: 'light'
+        });
+    </script>
+</body>
+</html>
