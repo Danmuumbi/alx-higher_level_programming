@@ -1,10 +1,7 @@
 #!/usr/bin/python3
 
-# Using one print function with string format and one loop
-for i in range(ord('a'), ord('z') + 1):
-    # Exclude 'q' and 'e' from the output
-    if i != ord('q') and i != ord('e'):
-        print("{:c}".format(i), end='')
+# Using a single loop to iterate over ASCII values of lowercase alphabet
+for i in range(97, 123):
+        if i != 101 and i != 113:  # Exclude ASCII values for 'e' and 'q'
+                    print("{:c}".format(i), end="")
 
-# Print a newline character at the end
-print()
